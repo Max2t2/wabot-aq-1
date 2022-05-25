@@ -13,7 +13,7 @@ let handler = async (m, { conn, text }) => {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else throw 'Conversion failed'
+    else throw 'لطفا به درستی وارد کنید'
   }
 }
 handler.help = ['wm <packname>|<author>']
