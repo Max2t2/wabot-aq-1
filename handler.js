@@ -259,11 +259,11 @@ module.exports = {
           if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
           if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-            this.send2Button(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, '© wabot-aq', 'Buy', `${usedPrefix}buy`, 'Buy All', `${usedPrefix}buyall`, m)
+            this.send2Button(m.chat, `Your limit is exhausted, please buy through *${usedPrefix}buy*`, '© surena', 'Buy', `${usedPrefix}buy`, 'Buy All', `${usedPrefix}buyall`, m)
             continue // Limit habis
           }
           if (plugin.level > _user.level) {
-            this.reply(m.chat, `Diperlukan level *${plugin.level}* untuk menggunakan perintah ini. Level kamu ${_user.level}`, m)
+            this.reply(m.chat, `Required level to use this command is: *${plugin.level}* . Your level is: ${_user.level}`, m)
             continue // If the level has not been reached
           }
           let extra = {
@@ -394,11 +394,11 @@ module.exports = {
     let chat = global.db.data.chats[m.key.remoteJid]
     if (chat.delete) return
     await this.sendButton(m.key.remoteJid, `
-Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
+Detected @${m.participant.split`@`[0]} have deleted the message
 
-Untuk mematikan fitur ini, ketik
+To turn off this feature, type
 *.enable delete*
-`.trim(), '© wabot-aq', 'Matikan', '.1 delete', m.message)
+`.trim(), '©  surena', 'Turn off', '.1 delete', m.message)
     this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
   },
   async onCall(json) {
@@ -420,22 +420,22 @@ Untuk mematikan fitur ini, ketik
         'count': '0'
       }, null]]]]
       this.sendJSON(nodePayload, tag)
-      m.reply('Dimohon untuk tidak menelpon bot!')
+      m.reply('لطفا با ربات تماس نگیرید!')
     }
   }
 }
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
-    owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
-    mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
-    premium: 'Perintah ini hanya untuk member _*Premium*_ !',
-    group: 'Perintah ini hanya dapat digunakan di grup!',
-    private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
-    admin: 'Perintah ini hanya untuk *Admin* grup!',
-    botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
-    unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*'
+    rowner: 'This command can only be used by _*Owner*_ !',
+    owner: 'This command can only be used by _*Bot Owner*_ !',
+    mods: 'This command can only be used by _*Moderator*_ !',
+    premium: 'This command can only be used by _*premium*_ members !',
+    group: 'This command can only be used in groups!',
+    private: 'This command can only be used in Private Chat!',
+    admin: 'This command is only for *Admin!*',
+    botAdmin: 'Make bots an *Admin* to use this command!',
+    unreg: 'Please register to use this feature by typing:\n\n*.register name.age*\n\nFor example: *.register amir.16*'
   }[type]
   if (msg) return m.reply(msg)
 }
