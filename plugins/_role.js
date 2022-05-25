@@ -2,15 +2,16 @@ const roles = {
   /*
   'Role Name': <Minimal Level To Obtain this Role>
   */
-  'Beginner': 0,
-  'Kitten Town': 10,
-  'Black Woods': 20,
-  'Farmount': 30,
-  'Rosenvale': 40,
-  'Amberhill': 50,
-  'Master Fap': 60,
-  'Master Woods': 80,
-  'Legend': 90
+  'Newbe': 0,
+  'Human': 10,
+  'Chat master': 20,
+  'Green gold': 30,
+  'Chat master': 40,
+  'God father': 50,
+  'Mega human': 60,
+  'Black dark': 80,
+  'LEGEND ⭐️': 90,
+  'Owner ☄️ ': 10000
 }
 
 module.exports = {
