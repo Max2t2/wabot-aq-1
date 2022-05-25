@@ -4,10 +4,10 @@ module.exports = {
         this.spam = this.spam ? this.spam : {}
         if (m.sender in this.spam) {
             this.spam[m.sender].count++
-            if (m.messageTimestamp.toNumber() - this.spam[m.sender].lastspam > 8) {
-                if (this.spam[m.sender].count > 8) {
+            if (m.messageTimestamp.toNumber() - this.spam[m.sender].lastspam > 7) {
+                if (this.spam[m.sender].count > 7) {
                     global.db.data.users[m.sender].banned = true
-                    m.reply('*در این گروه اسپم ممنوع است!!*')
+                    m.reply('*در این گروه مجاز به اسپم نیستید!!*')
                 }
                 this.spam[m.sender].count = 0
                 this.spam[m.sender].lastspam = m.messageTimestamp.toNumber()
