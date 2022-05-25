@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 
 let handler = async (m, { args, usedPrefix, command }) => {
     let er = `
-╭─「 Opsi 」
+╭─「 Optionsx 」
 │ latinkejawa
 │ latinkesunda
 │ jawakelatin
@@ -10,7 +10,7 @@ let handler = async (m, { args, usedPrefix, command }) => {
 ╰────
 
 Contoh penggunaan:
-${usedPrefix + command} latinkejawa selamat pagi
+${usedPrefix + command} Latinhewa good morning
     `.trim()
     if (!args[0]) throw er
     switch (args[0].toLowerCase()) {
@@ -29,7 +29,7 @@ ${usedPrefix + command} latinkejawa selamat pagi
             throw er
     }
 }
-handler.help = ['aksara'].map(v => v + ' <opsi> <teks>')
+handler.help = ['aksara'].map(v => v + ' <options> <text>')
 handler.tags = ['tools']
 handler.command = /^aksara$/i
 
