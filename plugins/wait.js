@@ -5,7 +5,7 @@ const fetch = require('node-fetch')
 let handler = async (m, { conn, usedPrefix }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw `Reply Foto/Kirim Foto Dengan Caption ${usedPrefix}wait`
+  if (!mime) throw `*Reply to a photo or send photo with caption* ${usedPrefix}wait`
   if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`
   let img = await q.download()
   await m.reply('Searching Anime Titles...')
@@ -17,15 +17,15 @@ let handler = async (m, { conn, usedPrefix }) => {
     },
     body: JSON.stringify({ image }),
   })
-  if (!response.ok) throw 'Gambar tidak ditemukan!'
+  if (!response.ok) throw 'Image not found!'
   let result = await response.json()
   let { is_adult, title, title_chinese, title_romaji, episode, season, similarity, filename, at, tokenthumb, anilist_id } = result.docs[0]
   let link = `https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(filename)}?t=${at}&token=${tokenthumb}`
   let nobuyaki = `
-${similarity < 0.89 ? 'Saya Memiliki Keyakinan Rendah Tentang Hal Ini' : ''}
+${similarity < 0.89 ? 'I Have Low Confidence About It' : ''}
 
-❏ Judul Jepang : *${title}*
-❏ Ejaan Judul : *${title_romaji}*
+❏ Japanese titles : *${title}*
+❏ Title Spelling : *${title_romaji}*
 ❏ Similarity : *${(similarity * 100).toFixed(1)}%*
 ❏ Episode : *${episode.toString()}*
 ❏ Ecchi : *${is_adult ? 'Yes' : 'No'}*
