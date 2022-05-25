@@ -1,5 +1,5 @@
 const { MessageType, newMessagesDB } = require("@adiwajshing/baileys")
-//const util = require('util')
+const util = require('util')
 
 module.exports = {
     async all(m, chatUpdate) {
@@ -50,7 +50,7 @@ module.exports = {
             }
 
         }
-        //m.reply(util.format(isIdMessage ? m.msg.selectedButtonId : m.msg.selectedDisplayText))
+        m.reply(util.format(isIdMessage ? m.msg.selectedButtonId : m.msg.selectedDisplayText))
         this.emit('chat-update', {
             ...chatUpdate,
             messages: newMessagesDB([
