@@ -1,7 +1,7 @@
 let debugMode = !1
 
-let winScore = 500
-let playScore = 50
+let winScore = 50
+let playScore = 10
 
 module.exports = {
     async before(m) {
@@ -12,7 +12,7 @@ module.exports = {
         this.game = this.game ? this.game : {}
         let room = Object.values(this.game).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
         if (room) {
-            // m.reply(`[DEBUG]\n${parseInt(m.text)}`)
+            m.reply(`[DEBUG]\n${parseInt(m.text)}`)
             if (!/^([1-9]|(me)?nyerah|surr?ender)$/i.test(m.text)) return !0
             isSurrender = !/^[1-9]$/.test(m.text)
             if (m.sender !== room.game.currentTurn) { // nek wayahku
@@ -24,10 +24,10 @@ module.exports = {
             }))
             if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
                 m.reply({
-                    '-3': 'Game telah berakhir',
+                    '-3': 'The game is over',
                     '-2': 'Invalid',
-                    '-1': 'Posisi Invalid',
-                    0: 'Posisi Invalid',
+                    '-1': 'Invalid Position',
+                    0: 'Invalid Position',
                 }[ok])
                 return !0
             }
