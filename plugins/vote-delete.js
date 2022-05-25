@@ -4,9 +4,9 @@ let handler = async (m, { conn, usedPrefix, isAdmin, isOwner }) => {
     }
     let id = m.chat
     conn.vote = conn.vote ? conn.vote : {}
-    if (!(id in conn.vote)) return conn.sendButton(m.chat, `Tidak ada voting di chat ini!`, '© wabot-aq', 'Mulai', `${usedPrefix}+vote`, m)
+    if (!(id in conn.vote)) return conn.sendButton(m.chat, `There is no voting in this chat!`, '© surena', 'Mulai', `${usedPrefix}+vote`, m)
     delete conn.vote[id]
-    m.reply(`Berhasil!`)
+    m.reply(`Succeed!`)
 }
 handler.help = ['hapusvote']
 handler.tags = ['vote']
