@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 Date: ${date}
 
 ${conn.absen[id][2] ? conn.absen[id][2] + '\n' : ''}
-╭─「 AbsentEe List 」
+╭─「 Absen List 」
 │ Total: ${absen.length}
 ${list}
 ╰────`.trim()
