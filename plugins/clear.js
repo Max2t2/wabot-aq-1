@@ -12,7 +12,7 @@ let handler = async (m, { conn, command, args }) => {
     }).catch(console.log)
     else await conn.modifyChat(id, 'mute', -Math.floor(new Date / 1e3) * 1e3 - 1e3).catch(console.log)
   }
-  conn.reply(m.chat, chats.length + ` chat ${args[0] ? args[0] : ''} telah dib` + ((isDelete || isClear) ? 'ersihkan' : 'isukan selamanya'), m)
+  conn.reply(m.chat, chats.length + ` chat ${args[0] ? args[0] : ''} already` + ((isDelete || isClear) ? 'ersihkan' : 'isukan selamanya'), m)
 }
 handler.help = [
   'clearchat', 
