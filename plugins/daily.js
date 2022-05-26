@@ -1,5 +1,5 @@
 const free = 500
-const prem = 5000
+const prem = 1000
 let handler = async (m, { isPrems }) => {
   let time = global.db.data.users[m.sender].lastclaim + 86400000
   if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed daily EXP today\nwait as long as ${msToTime(time - new Date())} and try again`
