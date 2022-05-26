@@ -2,7 +2,7 @@ const free = 500
 const prem = 1000
 let handler = async (m, { isPrems }) => {
   let time = global.db.data.users[m.sender].lastclaim + 86400000
-  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed daily EXP today\nwait as long as ${msToTime(time - new Date())} and try again`
+  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed daily EXP today!\nwait as long as ${msToTime(time - new Date())} and try again`
   global.db.data.users[m.sender].exp += isPrems ? prem : free
   m.reply(`+${isPrems ? prem : free} XP`)
   global.db.data.users[m.sender].lastclaim = new Date * 1
