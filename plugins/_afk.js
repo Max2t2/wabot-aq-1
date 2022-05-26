@@ -3,7 +3,7 @@ module.exports = {
     let user = global.db.data.users[m.sender]
     if (user.afk > -1) {
       m.reply(`
-Now you're out of AFK${user.afkReason ? ' Because of ' + user.afkReason : ''}
+Now you're out of AFK!${user.afkReason ? ' You were AFK because of ' + user.afkReason : ''}
 After ${clockString(new Date - user.afk)}
 `.trim())
       user.afk = -1
@@ -17,7 +17,7 @@ After ${clockString(new Date - user.afk)}
       if (!afkTime || afkTime < 0) continue
       let reason = user.afkReason || ''
       m.reply(`
-Don't tag him!
+Don't tag or mention him!
 He's AFK ${reason ? 'Because of ' + reason : 'for no reason'}
 AFK time: ${clockString(new Date - afkTime)}
 `.trim())
