@@ -6,10 +6,9 @@ module.exports = {
     let isGroupLink = linkRegex.exec(m.text)
 
     if (chat.antiLink && isGroupLink) {
-      m.reply('*Link detected...*')
+      m.reply('Link...')
       if (global.opts['restrict']) {
-        if (!isAdmin || isBotAdmin) return true
-        m.reply('*در این گروه ارسال لینک ممنوع است!*')
+        if (isAdmin || !isBotAdmin) return true
         this.groupRemove(m.chat, [m.sender])
       }
     }
