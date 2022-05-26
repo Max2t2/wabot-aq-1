@@ -3,10 +3,10 @@ let handler = async (m, { conn, text }) => {
     let who
     if (m.isGroup) who = m.mentionedJid[0]
     else who = m.chat
-    if (!who) throw 'Tag one of them'
+    if (!who) throw 'Tag User'
     let users = global.db.data.users
     users[who].banned = true
-    conn.reply(m.chat, `successfully banned from using surena`, m)
+    conn.reply(m.chat, `successfully banned user from using surena`, m)
 }
 handler.help = ['ban']
 handler.tags = ['owner']
