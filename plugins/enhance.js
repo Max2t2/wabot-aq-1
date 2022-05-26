@@ -4,7 +4,7 @@ const FormData = require('form-data')
 let handler = async (m) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw 'Tidak ada foto'
+  if (!mime) throw 'No photos'
   if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`
   let img = await q.download()
   let body = new FormData
@@ -14,7 +14,7 @@ let handler = async (m) => {
     body
   })
   if (!res.ok) throw await res.json()
-  await conn.sendFile(m.chat, await res.buffer(), 'hd.jpg', 'Nih, hd kan?', m)
+  await conn.sendFile(m.chat, await res.buffer(), 'hd.jpg', 'Yes, hd, right?', m)
 }
 handler.help = ['hd (caption|reply media)', 'enhance (caption|reply media)']
 handler.tags = ['tools']
