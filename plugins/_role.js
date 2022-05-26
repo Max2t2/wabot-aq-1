@@ -3,15 +3,17 @@ const roles = {
   'Role Name': <Minimal Level To Obtain this Role>
   */
   'Newbe': 0,
-  'Human': 10,
+  'Soldier': 10,
   'Chat master': 20,
   'Green gold': 30,
-  'Chat master': 40,
+  'Mafia': 40,
   'God father': 50,
   'Mega human': 60,
-  'Black dark': 80,
-  'LEGEND ⭐️': 90,
-  'Owner ☄️ ': 10000
+  'Mad master': 70,
+  'Black dark 🖤': 80,
+  'Leader 💎': 90,
+  'LEGEND ⭐️': 100,
+  'OWNER 🪐': 10000
 }
 
 module.exports = {
