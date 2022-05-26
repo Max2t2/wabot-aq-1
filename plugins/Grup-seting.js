@@ -7,7 +7,7 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
 	await conn.updatePresence(m.chat, Presence.composing)
 	if (isClose === undefined)
 		throw `
-*Please select the option :*
+*Please select an option :*
 
   *○ ${usedPrefix + command} close*
   *○ ${usedPrefix + command} open*
