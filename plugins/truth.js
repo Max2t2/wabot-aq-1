@@ -3,37 +3,37 @@ Made by Aine
 */
 
 let handler = async (m, { conn }) => {
-	let img = 'https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg'
+	let img = 'https://s6.uupload.ir/files/1615930905-_85tx.jpg'
     let trut = [
-"Pernah ngambil uang ortu apa ga?",
-"Pernah bohong sama ortu apa aja?\nCoba ceritakan tentang kebohongannya",
-"Apa makanan yang kamu sukai?",
-"Siapa yang mau di jadikan pacar di gc ini?",
-"Apa mimpi terburukmu?",
-"Apa hal paling memalukan dari temanmu?",
-"Pernah suka sama siapa aja? berapa lama?",
-"Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)",
-"Apa ketakutan terbesar kamu?",
-"Pernah suka sama orang dan merasa orang itu suka sama kamu juga?",
-"Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?",
-"Pernah gak nyuri uang nyokap atau bokap? Alesanya?",
-"Hal yang bikin seneng pas lu lagi sedih apa?",
-"Pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?",
-"Pernah jadi selingkuhan orang?",
-"Hal yang paling ditakutin",
-"Siapa orang yang paling berpengaruh kepada kehidupanmu",
-"Hal membanggakan apa yang kamu dapatkan di tahun ini",
-"Siapa orang yang bisa membuatmu sange :v",
-"Sapa orang yang pernah buatmu sange",
-"(bgi yg muslim) pernah ga solat seharian?",
-"Siapa yang paling mendekati tipe pasangan idealmu di sini",
-"Suka mabar(main bareng)sama siapa?",
-"Pernah nolak orang? alasannya kenapa?",
-"Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget",
-"Pencapaian yang udah didapet apa aja ditahun ini?",
-"Kebiasaan terburuk lo pas di sekolah apa?"
+"به نظرت جذاب ترین مرد / زن این جمع چه کسی است؟",
+"خجالت آورترین اتفاق زندگی ات را تعریف کن",
+"بزرگ ترین دروغ زندگی ات چه بوده است؟",
+"بدترین کاری که در مقابل چشم مردم انجام داده ای چه بوده است؟",
+"اگر به مدت یک ماه جنس مخالف خود بودی چه کارهایی می کردی؟",
+"شرم آورترین شی موجود در اتاقت چیست؟",
+"احمقانه ترین کاری که تا به حال کرده ای چه بوده است؟",
+"آیا رازی داری که تا به حال به هیچ کس نگفته باشی؟ به ما بگو (:",
+"به من چیزی بگو که نمی خواهی بدانم",
+"آیا تا به حال تحقیر شده ای؟ داستانش را تعریف کن",
+"بدترین شوخی که با کسی داشته ای چه بوده است؟",
+"اگر نامرئی باشی اولین کاری که انجام می دهی چیست؟",
+"اسم کسی را بگو که وانمود می کنی دوستش داری اما در واقع چشم دیدنش را نداری",
+"شرم آورترین لحظه زندگی ات کدام لحظه بوده است؟",
+"کدام کار است که اگر همه پول های دنیا را هم به تو بدهند انجام نمی دهی؟",
+"اگر مجبور باشی در یک جزیره به تنهایی با یک نفر زندگی کنی چه کسی را انتخاب می کنی؟",
+"دردناک ترین تجربه جسمی ات چه بوده است؟",
+"اگر غول چراغ جادو داشته باشی سه آرزویت چیست؟",
+"احمقانه ترین کاری که مقابل آینه انجام داده ای چه کاری بوده است؟",
+"به کدام عضو بدن خودت علاقه داری و از کدام متنفر هستی؟",
+"آخرین چیزی که در گوگل سرچ کرده ای چه بوده است؟",
+"خجالت آورترین خاطره کودکی ات چیست؟",
+"اولین باری که به کسی گفتی دوستت دارم چه زمانی و چه کسی بوده است؟",
+"اسم اعضای خونوادت چیه؟",
+"بدترین چیزی که خوردی چی بوده؟",
+"حاضری در ازای 50 میلیارد تومان تا ابد خونوادت رو نبینی؟",
+"بدترین کاری که تا حالا در حق کسی کردی چی بوده و چرا؟"
 ]  // tambahin kata kata sendiri 
-	conn.sendFile(m.chat, img, 'maker.jpeg', `*Truth*\n\n“${pickRandom(trut)}”`, m, false, { thumbnail: Buffer.alloc(0) })
+	conn.sendFile(m.chat, img, 'maker.jpeg', `*حقیقت*\n\n“${pickRandom(trut)}”`, m, false, { thumbnail: Buffer.alloc(0) })
 }
 handler.help = ['truth']
 handler.tags = ['fun']
