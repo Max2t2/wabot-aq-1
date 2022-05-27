@@ -4,11 +4,11 @@ const tld = 'cn'
 
 let handler = async (m, { args, usedPrefix, command }) => {
     let err = `
-Contoh:
+For example:
 ${usedPrefix + command} <lang> [text]
 ${usedPrefix + command} id your messages
 
-Daftar bahasa yang didukung: https://cloud.google.com/translate/docs/languages
+لیست زبان هایی که پشتیبانی می شوند: https://cloud.google.com/translate/docs/languages
 `.trim()
 
     let lang = args[0]
