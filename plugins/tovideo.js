@@ -1,9 +1,9 @@
 let { webp2mp4 } = require('../lib/webp2mp4')
 let { ffmpeg } = require('../lib/converter')
 let handler = async (m, { conn }) => {
-    if (!m.quoted) throw 'Reply sticker or audio!'
+    if (!m.quoted) throw 'بر روی استیکر یا صدا ریپلای بزنید!'
     let mime = m.quoted.mimetype || ''
-    if (!/webp|audio/.test(mime)) throw 'Reply sticker or audio!'
+    if (!/webp|audio/.test(mime)) throw 'بر روی استیکر یا صدا ریپلای بزنید!'
     let media = await m.quoted.download()
     let out = Buffer.alloc(0)
     if (/webp/.test(mime)) {
