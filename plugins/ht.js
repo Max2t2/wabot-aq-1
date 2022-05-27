@@ -5,7 +5,7 @@ let handler = async (m, { conn, text }) => {
   m.reply('*در حال ساخت...*\nلطفا چند ثانیه صبور باشید')
   try {
     let img = await ht(text ? text : ':v')
-    conn.sendFile(m.chat, img, 'And Its.png', '*©  surena*\nMade with SURENA AI', m)
+    conn.sendFile(m.chat, img, 'Harta Tahta.png', '*©  surena*\nMade with SURENA AI', m)
   } finally {
     delete conn.hartatahta[m.chat]
   }
@@ -38,8 +38,8 @@ function ht(text = '') {
     let format = ''
     let layers = [
       `[v:0]scale=${s}${format}[im]`,
-      textArgs('HARTA', 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2-(text_h*${lh})`, w, h) + format + '[top]',
-      textArgs('TAHTA', 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2`, w, h) + format + '[mid]',
+      textArgs('AND', 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2-(text_h*${lh})`, w, h) + format + '[top]',
+      textArgs('ITS', 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2`, w, h) + format + '[mid]',
       textArgs(text, 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2+(text_h*${lh})`, w, h) + format + '[bot]',
       '[top][mid]blend=all_mode=addition[con]',
       '[con][bot]blend=all_mode=addition[txt]',
