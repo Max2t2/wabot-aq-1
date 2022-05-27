@@ -5,7 +5,7 @@ if (global.conns instanceof Array) console.log()// for (let i of global.conns) g
 else global.conns = []
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-  if (!global.db.data.settings[conn.user.jid].jadibot) return conn.sendButton(m.chat, 'Jadibot tidak aktif', '', isOwner ? `Aktifkan` : `Owner`, isOwner ? `${usedPrefix}1 jadibot` : `${usedPrefix}owner`, m)
+  if (!global.db.data.settings[conn.user.jid].jadibot) return conn.sendButton(m.chat, 'Click to see owners!', '', isOwner ? `Aktifkan` : `Owner`, isOwner ? `${usedPrefix}1 jadibot` : `${usedPrefix}owner`, m)
   let parent = args[0] && args[0] == 'plz' ? conn : global.conn
   let auth = false
   if ((args[0] && args[0] == 'plz') || global.conn.user.jid == conn.user.jid) {
@@ -71,6 +71,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
 }
 handler.help = ['jadibot']
 handler.tags = ['jadibot']
+handler.owner = true
 
 handler.command = /^jadibot$/i
 
