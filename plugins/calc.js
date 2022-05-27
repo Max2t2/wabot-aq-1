@@ -24,7 +24,7 @@ let handler = async (m, { conn, text }) => {
     console.log(val)
     let result = (new Function('return ' + val))()
     if (!result) throw result
-    m.reply(`*${format}* = _${result}_`)
+    m.reply(`*${format}* = ${result}`)
   } catch (e) {
     if (e == undefined) throw '*Enter content!*\n\nFor example:\n.calc 1+1'
     throw 'Incorrect format! only 0-9 numbers and -, +, *, /, ×, ÷, π, e, (, ) symbols supported.'
