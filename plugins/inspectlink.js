@@ -11,14 +11,16 @@ let handler = async (m, { conn, text }) => {
   let caption = `
 -- [Group Link Inspector] --
 
-*Group name:* ${res.subject}
-*Group ID:* @${res.id.split('-')[0]} *Made on:* *${formatDate(res.creation * 1000)}*${res.subjectOwner ? `
-*Created by:* @${res.subjectOwner.split`@`[0]} on *${formatDate(res.subjectTime * 1000)}*`: ''}${res.descOwner ? `
-*Description changed:* by @${res.descOwner.split`@`[0]} on *${formatDate(res.descTime * 1000)}*` : ''}
-*Number of Members:* ${res.size}
-\n*Known members who joined*: ${res.participants ? '\n' + res.participants.map((user, i) => ++i + '. @' + user.id.split`@`[0]).join('\n').trim() : 'None'}
-${res.desc ? `*description:*
+ 📌 *Group name:* ${res.subject}
+ 📌 *Group ID:* ${res.id.split('-')[0]} * 📌 Made on:* *${formatDate(res.creation * 1000)}*${res.subjectOwner ? `
+ 📌 *Created by:* @${res.subjectOwner.split`@`[0]} on *${formatDate(res.subjectTime * 1000)}*`: ''}${res.descOwner ? `
+ 📌 *Description changed:* by @${res.descOwner.split`@`[0]} on *${formatDate(res.descTime * 1000)}*` : ''}
+ 📌 *Number of Members:* ${res.size}
+\n* 📌 Known members who joined*: ${res.participants ? '\n' + res.participants.map((user, i) => ++i + '. @' + user.id.split`@`[0]).join('\n').trim() : 'None'}
+${res.desc ? `* 📌 description:*
 ${res.desc}` : '*There is no description!*'}
+
+___________________________
 
 *JSON Version*
 \`\`\`${JSON.stringify(res, null, 1)}\`\`\`
