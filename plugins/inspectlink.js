@@ -12,7 +12,7 @@ let handler = async (m, { conn, text }) => {
 -- [Group Link Inspector] --
 ${res.id}
 *Group name:* ${res.subject}
-*Group ID:* @${res.id.split('-')[0]} pada *${formatDate(res.creation * 1000)}*${res.subjectOwner ? `
+*Group ID:* @${res.id.split('-')[0]}`
 *Created by* @${res.subjectOwner.split`@`[0]} on *${formatDate(res.creation * 1000)}*${res.subjectOwner ? `
 *Deskripsi diubah* oleh @${res.descOwner.split`@`[0]} pada *${formatDate(res.descTime * 1000)}*` : ''}
 *Jumlah Member:* ${res.size}
