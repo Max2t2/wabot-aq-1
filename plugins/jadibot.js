@@ -5,7 +5,7 @@ if (global.conns instanceof Array) console.log()// for (let i of global.conns) g
 else global.conns = []
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-  if (!global.db.data.settings[conn.user.jid].jadibot) return conn.sendButton(m.chat, 'دسترسی فقط برای توسعه دهندگان فعال است | از این بخش میتوانید کد فعالسازی ربات را دریافت کنید', '', isOwner ? `فعالسازی` : `توسعه دهندگان`, isOwner ? `${usedPrefix}1 پشتیبانی` : `${usedPrefix}owner`, m)
+  if (!global.db.data.settings[conn.user.jid].jadibot) return conn.sendButton(m.chat, 'دسترسی فقط برای توسعه دهندگان فعال است | از این بخش میتوانید کد فعالسازی ربات را دریافت کنید', '', isOwner ? `فعالسازی` : `توسعه دهندگان`, isOwner ? `${usedPrefix}1 jadibot` : `${usedPrefix}owner`, m)
   let parent = args[0] && args[0] == 'plz' ? conn : global.conn
   let auth = false
   if ((args[0] && args[0] == 'plz') || global.conn.user.jid == conn.user.jid) {
