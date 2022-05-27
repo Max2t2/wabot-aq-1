@@ -5,7 +5,7 @@ if (global.conns instanceof Array) console.log()// for (let i of global.conns) g
 else global.conns = []
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-  if (!global.db.data.settings[conn.user.jid].jadibot) return conn.sendButton(m.chat, 'Click to see owners!', '', isOwner ? `Aktifkan` : `Owner`, isOwner ? `${usedPrefix}1 jadibot` : `${usedPrefix}owner`, m)
+  if (!global.db.data.settings[conn.user.jid].jadibot) return conn.sendButton(m.chat, 'دسترسی فقط برای توسعه دهندگان فعال است | از این بخش میتوانید کد فعالسازی ربات را دریافت کنید', '', isOwner ? `فعالسازی` : `Owner`, isOwner ? `${usedPrefix}1 پشتیبانی` : `${usedPrefix}owner`, m)
   let parent = args[0] && args[0] == 'plz' ? conn : global.conn
   let auth = false
   if ((args[0] && args[0] == 'plz') || global.conn.user.jid == conn.user.jid) {
@@ -21,7 +21,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
       auth = true
     }
     conn.on('qr', async qr => {
-      let scan = await parent.sendFile(m.chat, await qrcode.toDataURL(qr, { scale: 8 }), 'qrcode.png', 'Scan QR ini untuk jadi bot sementara\n\n1. Klik titik tiga di pojok kanan atas\n2. Ketuk WhatsApp Web\n3. Scan QR ini \nQR Expired dalam 20 detik', m)
+      let scan = await parent.sendFile(m.chat, await qrcode.toDataURL(qr, { scale: 8 }), 'qrcode.png', 'برای فعالسازی این کد را اسکن کنید\n\n1. وارد بخش Linked Devices واتساپ شوید\n2. عکس بالا را با گوشی اسکن کنید\n3. اکنون ربات برای شما فعال شده! \n\nهر کد بعد از 20 ثانیه حذف میشود', m)
       setTimeout(() => {
         parent.deleteMessage(m.chat, scan.key)
       }, 30000)
@@ -40,9 +40,9 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     conn.on('CB:action,,call', conn.onCall)
     conn.regenerateQRIntervalMs = null
     conn.connect().then(async ({ user }) => {
-      parent.reply(m.chat, 'Berhasil tersambung dengan WhatsApp - mu.\n*NOTE: Ini cuma numpang*\n' + JSON.stringify(user, null, 2), m)
+      parent.reply(m.chat, 'Successfully connected to surena - mu.\n*NOTE: It is just a temporary bot*\n' + JSON.stringify(user, null, 2), m)
       if (auth) return
-      await parent.sendMessage(user.jid, `Kamu bisa login tanpa qr dengan pesan dibawah ini. untuk mendapatkan kode lengkapnya, silahkan kirim *${usedPrefix}getcode* untuk mendapatkan kode yang akurat`, MessageType.extendedText)
+      await parent.sendMessage(user.jid, `You can login without qr code, just with message! to get the full code, please send *${usedPrefix}getcode*`, MessageType.extendedText)
       parent.sendMessage(user.jid, `${usedPrefix + command} ${Buffer.from(JSON.stringify(conn.base64EncodedAuthInfo())).toString('base64')}`, MessageType.extendedText)
     })
     setTimeout(() => {
@@ -71,7 +71,6 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
 }
 handler.help = ['jadibot']
 handler.tags = ['jadibot']
-handler.owner = true
 
 handler.command = /^jadibot$/i
 
