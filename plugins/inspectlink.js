@@ -11,9 +11,9 @@ let handler = async (m, { conn, text }) => {
   let caption = `
 -- [Group Link Inspector] --
 ${res.id}
-*Judul:* ${res.subject}
-*Dibuat* oleh @${res.id.split('-')[0]} pada *${formatDate(res.creation * 1000)}*${res.subjectOwner ? `
-*Judul diubah* oleh @${res.subjectOwner.split`@`[0]} pada *${formatDate(res.subjectTime * 1000)}*`: ''}${res.descOwner ? `
+*Group name:* ${res.subject}
+*Group ID:* @${res.id.split('-')[0]} pada *${formatDate(res.creation * 1000)}*${res.subjectOwner ? `
+*Created by* @${res.subjectOwner.split`@`[0]} on *${(res.subjectTime * 1000)}*`: ''}${res.descOwner ? `
 *Deskripsi diubah* oleh @${res.descOwner.split`@`[0]} pada *${formatDate(res.descTime * 1000)}*` : ''}
 *Jumlah Member:* ${res.size}
 *Member yang diketahui join*: ${res.participants ? '\n' + res.participants.map((user, i) => ++i + '. @' + user.id.split`@`[0]).join('\n').trim() : 'Tidak ada'}
