@@ -1,7 +1,7 @@
 let handler = async (m, { args, usedPrefix, command }) => {
 
-if (!args[0]) throw 'usernamenya mana om'
-if (!args[1]) throw 'repo nya mana?'
+if (!args[0]) throw 'Enter user name'
+if (!args[1]) throw 'Which repo you want\n\nFor example:\n?'
 
 let url = `https://github.com/${args[0]}/${args[1]}/archive/refs/heads/main.zip`
 //ByRizkyAdi
