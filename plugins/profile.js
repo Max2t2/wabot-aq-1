@@ -28,7 +28,7 @@ ______________
 *Role:* ${role}
 *Limit:* ${limit}
 *Registered:* ${registered ? 'Yes': 'No'}
-Premium: ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\n\n______________\nEXP claimed today ✅' : ''}
+Premium: ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\n______________\nEXP claimed today ✅' : ''}
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
