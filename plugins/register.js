@@ -3,7 +3,7 @@ let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { text, usedPrefix }) {
   let user = global.db.data.users[m.sender]
   if (user.registered === true) throw `Anda sudah terdaftar\nMau daftar ulang? ${usedPrefix}unreg <SN|SERIAL NUMBER>`
-  if (!Reg.test(text)) throw `*لطفا به درستی وارد کنید*\n\nمانند : .register amir.16`
+  if (!Reg.test(text)) throw `*لطفا به درستی وارد کنید*\n\nFor example: *${usedPrefix}amir.16*`
   let [_, name, splitter, age] = text.match(Reg)
   if (!name) throw 'نام وارد نشده (حروف)'
   if (!age) throw 'سن وارد نشده (عدد)'
