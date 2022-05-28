@@ -27,7 +27,7 @@ ${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.s
 
 ______________________________
 
-• *${len}* نفر برتر Level•
+• *${len}* نفر برتر Level •
 رتبه شما *${usersLevel.indexOf(m.sender) + 1}* از بین *${usersLevel.length}* کاربر است!
 
 ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)} wa.me/` : '@'}${jid.split`@`[0]} *Level ${level}*`).join`\n`}
