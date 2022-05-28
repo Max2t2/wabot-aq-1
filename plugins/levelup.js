@@ -5,17 +5,17 @@ let handler = m => {
   if (!levelling.canLevelUp(user.level, user.exp, global.multiplier)) {
     let { min, xp, max } = levelling.xpRange(user.level, global.multiplier)
     throw `
-Level *${user.level} (${user.exp - min}/${xp})*
-Kurang *${max - user.exp}* lagi!
+لول شما *${user.level} (${user.exp - min}/${xp})* است
+و به *${max - user.exp} EXP* نیاز دارید!
 `.trim()
   }
   let before = user.level * 1
 	while (levelling.canLevelUp(user.level, user.exp, global.multiplier)) user.level++
 	if (before !== user.level) {
             m.reply(`
-Selamat, anda telah naik level!
-*${before}* -> *${user.level}*
-gunakan *.profile* untuk mengecek
+تبریک میگم، لول شما ارتقا یافت!
+*${before}* >> *${user.level}*
+برای مشاهده از *.profile* استفاده کنید
 	`.trim())
         }
 }
