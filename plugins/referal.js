@@ -35,11 +35,13 @@ let handler = async (m, { conn, usedPrefix, text }) => {
     let command_text = `${usedPrefix}ref ${code}`
     let command_link = `wa.me/${conn.user.jid.split('@')[0]}?text=${encodeURIComponent(command_text)}`
     let share_text = `
-کد دعوت من رو برای شماره زیر ارسال کن و *${xp_first_time} XP* رایگان از ربات واتساپ بگیر!
+کد دعوت من رو برای شماره زیر ارسال کن و *${xp_first_time} XP* رایگان از ربات واتساپ بگیر 👇
 
-کد دعوت شما: *${code}*
+کد دعوت من /: *${code}*
 
+___________
 ${command_link}
+___________
 `.trim()
     m.reply(`
 هر کاربر جدیدی که کد دعوت شمارو وارد کنه *${xp_link_creator} XP* رایگان دریافت میکنه!
