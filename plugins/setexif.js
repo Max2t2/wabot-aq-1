@@ -14,7 +14,7 @@ let handler = async (m, { usedPrefix, command, args }) => {
         }, null, 4), function (err) {
             if (err) throw err;
             console.log('Replaced!');
-            m.reply(`Sukses mengganti exif
+            m.reply(`Successfully changed to
             
 *Packname*: ${stek1}
 *Author*: ${stek2}
@@ -23,7 +23,7 @@ let handler = async (m, { usedPrefix, command, args }) => {
         global.packname = stek1
         global.author = stek2
     } else {
-        m.reply(`Format salah ${usedPrefix + command} <packname>|<owner>`)
+        m.reply(`Incorrect format: ${usedPrefix + command} <packname>|<owner>`)
     }
 
 }
