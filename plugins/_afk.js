@@ -20,7 +20,6 @@ module.exports = {
       m.reply(`
 *لطفا ولش کنید!*
 اون به مدت *${clockString(new Date - afkTime)}* در حالت AFK هست${reason ? 'به دلیل ' + reason  + '.' : '.'}
-*${clockString(new Date - afkTime)}*
 `.trim())
     }
     return true
