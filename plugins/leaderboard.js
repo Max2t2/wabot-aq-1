@@ -33,8 +33,7 @@ ______________________________
 ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)} wa.me/` : '@'}${jid.split`@`[0]} *Level ${level}*`).join`\n`}
 
 
-
-'© surena'
+*© SURENA*
 `.trim()
   conn.reply(m.chat, text, m, {
     contextInfo: {
