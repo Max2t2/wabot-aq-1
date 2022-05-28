@@ -8,9 +8,9 @@ handler.all = async function (m, { isBotAdmin }) {
             sender: m.sender
         }
         this.groupRemove(m.chat, [m.sender])
-        await this.modifyChat(m.chat, 'clear', {
-            includeStarred: false
-        }).catch(console.log)
+        //await this.modifyChat(m.chat, 'clear', {
+           // includeStarred: false
+        //}).catch(console.log)
     }
 }
 
