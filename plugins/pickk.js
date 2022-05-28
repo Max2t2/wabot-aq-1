@@ -1,7 +1,7 @@
 let handler = async (m, { text, args, participants }) => {
-    if (args[0] < 0, args.length < 2) throw 'Example: #pick 15 gay'
+    if (args[0] < 0, args.length < 2) throw 'Use this command for draw!\n\nFor example: .pickup 5 باهوش'
     let users = participants.map(u => u.jid)
-    m.reply(`*Kamu Terpick sebagai ${text.replace(args, '').trimStart()}*
+    m.reply(`*ما اینجا ${text.replace(args, '').trimStart()} داریم!*
     
 ${new Array(Math.min(users.length, args[0])).fill().map(() => {
     let index = Math.floor(Math.random() * users.length)
