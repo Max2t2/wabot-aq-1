@@ -11,20 +11,31 @@ let handler = async (m, { conn, args, participants }) => {
   console.log(participants)
   let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(5, sortedExp.length)
   let text = `
-• *${len}* نفر برتر XP •
-🏅 رتبه شما *${usersExp.indexOf(m.sender) + 1}* از بین *${usersExp.length}* کاربر است!
+*SURENA LEADER BOARD  🔥*
 
-${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${exp} Exp*`).join`\n`}
+• *${len}* نفر برتر EXP •
+رتبه شما *${usersExp.indexOf(m.sender) + 1}* از بین *${usersExp.length}* کاربر است!
 
-• *Limit Leaderboard Top ${len}* •
-Kamu: *${usersLim.indexOf(m.sender) + 1}* dari *${usersLim.length}*
+${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)} wa.me/` : '@'}${jid.split`@`[0]} *${exp} EXP*`).join`\n`}
 
-${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${limit} Limit*`).join`\n`}
+______________________________
 
-• *Level Leaderboard Top ${len}* •
-You: *${usersLevel.indexOf(m.sender) + 1}* from *${usersLevel.length}*
+• *${len}* نفر برتر Limit •
+رتبه شما *${usersLim.indexOf(m.sender) + 1}* از بین *${usersLim.length}* کاربر است!
 
-${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Level ${level}*`).join`\n`}
+${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)} wa.me/` : '@'}${jid.split`@`[0]} *${limit} Limit*`).join`\n`}
+
+______________________________
+
+• *${len}* نفر برتر Level•
+رتبه شما *${usersLevel.indexOf(m.sender) + 1}* از بین *${usersLevel.length}* کاربر است!
+
+${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)} wa.me/` : '@'}${jid.split`@`[0]} *Level ${level}*`).join`\n`}
+
+
+
+
+*SURENA WHATSAPP BOT*
 `.trim()
   conn.reply(m.chat, text, m, {
     contextInfo: {
