@@ -7,9 +7,10 @@ module.exports = {
 
     if (chat.antiLink && isGroupLink && isBotAdmin && !isAdmin) {
       m.reply('Link...')
+      this.groupRemove(m.chat, [m.sender])
       if (global.opts['restrict']) {
         if (!isAdmin || isBotAdmin) return true
-        this.groupRemove(m.chat, [m.sender])
+        //this.groupRemove(m.chat, [m.sender])
       }
     }
     return true
