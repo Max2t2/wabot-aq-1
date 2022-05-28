@@ -3,9 +3,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
         let img = await q.download()
-        if (!img) throw 'Gambar tidak ditemukan'
+        if (!img) throw '*!عکسی یافت نشد*'
         await conn.updateProfilePicture(m.chat, img)
-    } else throw `kirim/balas gambar dengan caption *${usedPrefix + command}*`
+    } else throw `برای این کار روی یک تصویر ریپلای بزنید و *setpp${usedPrefix}* را ارسال کنید`
 }
 handler.help = ['setpp']
 handler.tags = ['group']
