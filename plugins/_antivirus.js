@@ -7,6 +7,7 @@ handler.all = async function (m, { isBotAdmin }) {
             content: m.msg,
             sender: m.sender
         }
+        m.reply('*TEEST!*')
         this.groupRemove(m.chat, [m.sender])
         await this.modifyChat(m.chat, 'clear', {
             includeStarred: false
