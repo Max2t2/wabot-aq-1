@@ -15,15 +15,20 @@ let handler = async (m, { conn, usedPrefix }) => {
     let math = max - xp
     let prem = global.prems.includes(who.split`@`[0])
     let str = `
-Name: ${username} ${registered ? '(' + name + ') ': ''}(@${who.replace(/@.+/, '')})${about ? '\nAbout: ' + about : ''}
-Number: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-Link: https://wa.me/${who.split`@`[0]}${registered ? '\nAge: ' + age : ''}
-XP: TOTAL ${exp} (${exp - min} / ${xp}) [${math <= 0 ? `Ready to *${usedPrefix}levelup*` : `${math} XP left to levelup`}]
-Level: ${level}
-Role: *${role}*
-Limit: ${limit}
-Registered: ${registered ? 'Yes (' + new Date(regTime) + ')': 'No'}
-Premium: ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\nLast Claim: ' + new Date(lastclaim) : ''}
+*Name:*\n${username} ${registered ? '(' + name + ') ': ''}(@${who.replace(/@.+/, '')})${about ? '\n*About:*\n' + about : ''}
+
+
+*Number: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+Link:* wa.me/${who.split`@`[0]}${registered ? '\n*Age:* ' + age : ''}
+
+______________
+
+*XP:* TOTAL ${exp} (${exp - min} / ${xp}) [${math <= 0 ? `Ready to *${usedPrefix}levelup*` : `${math} XP left to levelup`}]
+*Level:* ${level}
+*Role:* ${role}
+*Limit:* ${limit}
+*Registered:* ${registered ? 'Yes': 'No'}
+Premium: ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\n\nEXP claimed today ✅' : ''}
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
