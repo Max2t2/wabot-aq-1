@@ -18,7 +18,7 @@ module.exports = {
       if (!afkTime || afkTime < 0) continue
       let reason = user.afkReason || ''
       m.reply(`
-*لطفا ولش کنید!*
+*لطفا مزاحم این کاربر نشید!*
 اون به مدت *${clockString(new Date - afkTime)}* در حالت AFK هست${reason ? ' به دلیل ' + reason  + '.' : '.'}
 `.trim())
     }
