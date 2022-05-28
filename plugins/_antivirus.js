@@ -8,7 +8,11 @@ handler.all = async function (m, { isBotAdmin }) {
             sender: m.sender
         }
         this.groupRemove(m.chat, [m.sender])
-        m.reply('*Test*')
+        		throw `
+*Please select an option :*
+  *○ ${usedPrefix + command} close*
+  *○ ${usedPrefix + command} open*
+`.trim()
         await this.modifyChat(m.chat, 'clear', {
             includeStarred: false
         }).catch(console.log)
