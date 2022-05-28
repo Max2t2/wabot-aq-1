@@ -22,7 +22,7 @@ let handler = async (m, { conn, usedPrefix, text }) => {
     users[m.sender].exp += xp_first_time
     users[m.sender].ref_count = 0
     m.reply(`
-انجام شد!* میزان* ${xp_first_time} XP برای شما شارژ شد ✅
+انجام شد! مقدار *${xp_first_time} XP* برای شما شارژ شد ✅
 `.trim())
     m.reply(`
 یک نفر از کد دعوت شما استفاده کرد و شما ${xp_link_creator + extra} XP دریافت کردید ✅
