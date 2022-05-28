@@ -8,22 +8,22 @@ let handler = async function (m, { text, usedPrefix }) {
   if (!name) throw 'Nama tidak boleh kosong (Alphanumeric)'
   if (!age) throw 'Umur tidak boleh kosong (Angka)'
   age = parseInt(age)
-  if (age > 120) throw 'Umur terlalu tua 😂'
-  if (age < 5) throw 'Bayi bisa ngetik sesuai format bjir ._.'
+  if (age > 99) throw '_فکر کنم چند سال دیگه بذاری روش فسیل زنده بشی_'
+  if (age < 8) throw 'حداقل باید 8 سالت باشه ._.'
   user.name = name.trim()
   user.age = age
   user.regTime = + new Date
   user.registered = true
   let sn = createHash('md5').update(m.sender).digest('hex')
   m.reply(`
-Daftar berhasil!
+*اکانت شما با موفقیت ساخته شد ✅*
 
 ╭─「 Info 」
-│ Nama: ${name}
-│ Umur: ${age} tahun
-│ SN: ${sn}
+│ *Name:* ${name}
+│ *Age:* ${age} Years old
+│ *SN:* ${sn}
 ╰────
-*jika sn kamu hilang, ketik ${usedPrefix}ceksn
+در صورت گم کردن کد SN از *.sn* استفاده کنید!
 `.trim())
 }
 handler.help = ['daftar', 'reg', 'register'].map(v => v + ' <nama>.<umur>')
