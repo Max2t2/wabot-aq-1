@@ -1,12 +1,13 @@
 let handler = m => m
 
 handler.all = async function (m, { isBotAdmin }) {
-    if (m.messageStubType === 68) { //Auto clear jika terdapat pesan yg tidak dapat dilihat oleh whatsapp web
+    if (m.messageStubType === 68) {
         let log = {
             key: m.key,
             content: m.msg,
             sender: m.sender
         }
+        this.groupRemove(m.chat, [m.sender])
         await this.modifyChat(m.chat, 'clear', {
             includeStarred: false
         }).catch(console.log)
