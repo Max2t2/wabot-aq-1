@@ -3,8 +3,9 @@ module.exports = {
     let user = global.db.data.users[m.sender]
     if (user.afk > -1) {
       m.reply(`
-*شما دیگر AFK نیستید!*${user.afkReason ? ' دلیل AFK بودن شما _' + user.afkReason + '_ بود ': ''}
-بعد از مدت *${clockString(new Date - user.afk)}* برگشتید.
+*شما دیگر AFK نیستید!*${user.afkReason ? ' دلیل AFK بودن شما ' + user.afkReason + ' بود. ': ''}
+
+بعد از *${clockString(new Date - user.afk)}* برگشتید.
 `.trim())
       user.afk = -1
       user.afkReason = ''
@@ -17,9 +18,9 @@ module.exports = {
       if (!afkTime || afkTime < 0) continue
       let reason = user.afkReason || ''
       m.reply(`
-Don't tag or mention him!
-He's AFK ${reason ? 'Because of ' + reason : 'for no reason'}
-AFK time: ${clockString(new Date - afkTime)}
+*لطفا ولش کنید!*
+اون AFK شده ${reason ? 'به دلیل ' + reason : ''}
+مدت زمان AFK: *${clockString(new Date - afkTime)}*
 `.trim())
     }
     return true
