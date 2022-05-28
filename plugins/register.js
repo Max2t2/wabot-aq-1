@@ -23,7 +23,7 @@ let handler = async function (m, { text, usedPrefix }) {
 │ *Age:* ${age} Years old
 │ *SN:* ${sn}
 ╰────
-در صورت گم کردن کد SN از *.sn* استفاده کنید!
+در صورت گم کردن کد SN از *sn${usedPrefix}* استفاده کنید!
 `.trim())
 }
 handler.help = ['daftar', 'reg', 'register'].map(v => v + ' <nama>.<umur>')
