@@ -34,8 +34,7 @@ ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants
 
 
 
-
-*SURENA WHATSAPP BOT*
+'${text}' , '© surena'
 `.trim()
   conn.reply(m.chat, text, m, {
     contextInfo: {
