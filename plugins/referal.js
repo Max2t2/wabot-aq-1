@@ -1,32 +1,32 @@
 const crypto = require('crypto')
 
 const xp_first_time = 2500
-const xp_link_creator = 15000
+const xp_link_creator = 10000
 const xp_bonus = {
-    5: 40000,
-   10: 100000,
-   20: 250000,
-   50: 1000000,
-  100: 10000000,
+    5: 20000,
+   10: 50000,
+   20: 140000,
+   50: 400000,
+  100: 1000000,
 }
 
 let handler = async (m, { conn, usedPrefix, text }) => {
   let users = global.db.data.users
   if (text) {
-    if ('ref_count' in users[m.sender]) throw 'Tidak bisa menggunakan kode referal!'
+    if ('ref_count' in users[m.sender]) throw '*نمیتوانید از این کد دعوت استفاده کنید!*'
     let link_creator = (Object.entries(users).find(([, { ref_code }]) => ref_code === text.trim()) || [])[0]
-    if (!link_creator) throw 'Kode referal tidak valid'
+    if (!link_creator) throw '*کد دعوت نادرست است!*'
     let count = users[link_creator].ref_count++
     let extra = xp_bonus[count] || 0
     users[link_creator].exp += xp_link_creator + extra
     users[m.sender].exp += xp_first_time
     users[m.sender].ref_count = 0
     m.reply(`
-Selamat!
+انجام شد!
 +${xp_first_time} XP
 `.trim())
     m.reply(`
-Seseorang telah menggunakan kode referal kamu
+یک نفر از کد دعوت شما استفاده کرد و
 +${xp_link_creator + extra} XP
 `.trim(), link_creator)
   } else {
@@ -35,23 +35,23 @@ Seseorang telah menggunakan kode referal kamu
     let command_text = `${usedPrefix}ref ${code}`
     let command_link = `wa.me/${conn.user.jid.split('@')[0]}?text=${encodeURIComponent(command_text)}`
     let share_text = `
-Dapatkan ${xp_first_time} XP untuk yang menggunakan link/kode referal dibawah ini
+کد دعوت من رو برای شماره زیر ارسال کن و *${xp_first_time} XP* رایگان از ربات واتساپ بگیر!
 
-Referal Code: *${code}*
+کد دعوت شما: *${code}*
 
 ${command_link}
 `.trim()
     m.reply(`
-Dapatkan ${xp_link_creator} XP untuk setiap pengguna baru yang menggunakan kode referal kamu
-${users[m.sender].ref_count} orang telah menggunakan kode referal kamu
+هر کاربر جدیدی که کد دعوت شمارو وارد کنه *${xp_link_creator} XP* رایگان دریافت میکنه!
+تا الان *${users[m.sender].ref_count}* نفر از کد دعوت شما استقاده کردن!
 
-Kode referal kamu: ${code}
+کد دعوت شما: *${code}*
 
-Bagikan link kepada teman: ${command_link}
+این لینک رو برای دوستات بفرست: ${command_link}
 
-atau kirim pesan kepada teman wa.me/?text=${encodeURIComponent(share_text)}
+یا به راحتی با این لینک این کارو انجام بده: wa.me/?text=${encodeURIComponent(share_text)}
 
-${Object.entries(xp_bonus).map(([count, xp]) => `${count} Orang = Bonus ${xp} XP`).join('\n')}
+${Object.entries(xp_bonus).map(([count, xp]) => `${count} عضو = ${xp} XP`).join('\n')}
 `.trim())
   }
 }
