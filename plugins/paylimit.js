@@ -7,7 +7,7 @@ let handler = async (m, { conn, text }) => {
     if (!who) throw '*شخص مورد نظر را تگ کنید*'
     let txt = text.replace('@' + who.split`@`[0], '').trim()
     if (!txt) throw 'مقدار Limit برای انتقال را وارد کنید'
-    if (isNaN(txt)) throw 'مخصوص شماره ها'
+    if (isNaN(txt)) throw '_مخصوص شماره ها_'
     let poin = parseInt(txt)
     let limit = poin
     let pjk = Math.ceil(poin * pajak)
