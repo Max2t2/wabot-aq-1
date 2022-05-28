@@ -163,7 +163,7 @@ ${usedPrefix}disable welcome
       throw false
   }
   m.reply(`
-*قابلیت ${type}* با موفقیت در این گروه *${isEnable ? '' : 'غیر'}فعال* ${isAll ? 'شد!'}
+*${type}* Succesfully *${isEnable ? 'en' : 'dis'}abled* ${isAll ? 'for this bot' : isUser ? '' : 'in this group!'}
 `.trim())
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
