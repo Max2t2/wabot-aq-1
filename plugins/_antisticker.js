@@ -1,6 +1,3 @@
-/*
-By : Aine
-*/
 let handler = m => m
 
 handler.before = function (m, { isAdmin, isBotAdmin }) {
@@ -15,7 +12,7 @@ handler.before = function (m, { isAdmin, isBotAdmin }) {
       if (global.opts) {
         if (isAdmin || !isBotAdmin){		  
         }else{
-          m.reply('*در این گروه استیکر ممنوع است!*\nشما از گروه اخراج میشوید')
+          m.reply('*در این گروه ارسال استیکر ممنوع است!*')
           this.groupRemove(m.chat, [m.sender])
         }return true
       }
