@@ -1,7 +1,7 @@
 let handler = async (m, { conn, text }) => {
-    if (!m.quoted) return conn.sendMessage(m.chat, 'where\'s message?', 'conversation')
-    if (m.quoted.mtype !== 'viewOnceMessage') throw 'Itu bukan pesan viewOnce'
-    await conn.copyNForward(m.chat, await conn.loadMessage(m.chat, m.quoted.id), false, { readViewOnce: true }).catch(_ => m.reply('Mungkin dah pernah dibuka bot'))
+    if (!m.quoted) return conn.sendMessage(m.chat, '*پیام کجاست؟*', 'conversation')
+    if (m.quoted.mtype !== 'viewOnceMessage') throw 'این یک پیام Viewonce نیست!'
+    await conn.copyNForward(m.chat, await conn.loadMessage(m.chat, m.quoted.id), false, { readViewOnce: true }).catch(_ => m.reply('Maybe you\'ve opened a bot'))
 }
 
 handler.help = ['readviewonce']
