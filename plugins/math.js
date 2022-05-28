@@ -3,19 +3,19 @@ let handler = async (m, { conn, args, usedPrefix }) => {
   if (args.length < 1) throw `
 Mode: ${Object.keys(modes).join(' | ')}
 
-Examples of use: ${usedPrefix}medium math
+For example *${usedPrefix}math medium*
 `.trim()
   let mode = args[0].toLowerCase()
   if (!(mode in modes)) throw `
 Mode: ${Object.keys(modes).join(' | ')}
 
-Examples of use: ${usedPrefix}math medium
+For example *${usedPrefix}math medium*
 `.trim()
   let id = m.chat
   if (id in conn.math) return conn.reply(m.chat, 'There are still unanswered questions in this chat', conn.math[id][0])
   let math = genMath(mode)
   conn.math[id] = [
-    await conn.reply(m.chat, `Lets see result of *${math.str}*\n\nTimeout: ${(math.time / 1000).toFixed(2)} seconds\nBonus Correct Answer: ${math.bonus} XP`, m),
+    await conn.reply(m.chat, `What is result of *${math.str}* ?\n\nTimeout: ${(math.time / 1000).toFixed(2)} seconds\nBonus: ${math.bonus} XP`, m),
     math, 4,
     setTimeout(() => {
       if (conn.math[id]) conn.reply(m.chat, `Time out!\nThe answer is ${math.result}`, conn.math[id][0])
