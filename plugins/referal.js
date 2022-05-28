@@ -1,7 +1,7 @@
 const crypto = require('crypto')
 
 const xp_first_time = 2500
-const xp_link_creator = 10000
+const xp_link_creator = 4000
 const xp_bonus = {
     5: 20000,
    10: 50000,
@@ -22,12 +22,10 @@ let handler = async (m, { conn, usedPrefix, text }) => {
     users[m.sender].exp += xp_first_time
     users[m.sender].ref_count = 0
     m.reply(`
-انجام شد!
-+${xp_first_time} XP
+انجام شد!* میزان* ${xp_first_time} XP برای شما شارژ شد ✅
 `.trim())
     m.reply(`
-یک نفر از کد دعوت شما استفاده کرد و
-+${xp_link_creator + extra} XP
+یک نفر از کد دعوت شما استفاده کرد و شما ${xp_link_creator + extra} XP دریافت کردید ✅
 `.trim(), link_creator)
   } else {
     let code = users[m.sender].ref_code = users[m.sender].ref_code || new Array(11).fill().map(() => [...'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'][crypto.randomInt(62)]).join('')
@@ -44,13 +42,13 @@ ${command_link}
     m.reply(`
 هر کاربر جدیدی که کد دعوت شمارو وارد کنه *${xp_link_creator} XP* رایگان دریافت میکنه!
 
-👥 تا الان *${users[m.sender].ref_count}* نفر از کد دعوت شما استقاده کردن
+👥 تا الان *${users[m.sender].ref_count}* نفر از کد دعوت شما استفاده کردن
 
- ✉️ کد دعوت شما: *${code}*
+✉️ کد دعوت شما: *${code}*
 
 این لینک رو برای دوستات بفرست: ${command_link}
 
-یا به راحتی با این لینک این کارو انجام بده: wa.me/?text=${encodeURIComponent(share_text)}
+یا به راحتی با این لینک دعوتشون کن: wa.me/?text=${encodeURIComponent(share_text)}
 
 ${Object.entries(xp_bonus).map(([count, xp]) => `💎 ${count} عضو = ${xp} XP`).join('\n')}
 `.trim())
