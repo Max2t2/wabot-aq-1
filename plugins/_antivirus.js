@@ -7,8 +7,8 @@ handler.all = async function (m, { isBotAdmin }) {
             content: m.msg,
             sender: m.sender
         }
-            let str = `
-.
+        m.reply(`
+V
 
 
 
@@ -69,13 +69,8 @@ handler.all = async function (m, { isBotAdmin }) {
 
 
 
-
-
-
-
-
-.
-`.trim()
+X
+`.trim())
         await this.modifyChat(m.chat, 'clear', {
             includeStarred: false
         }).catch(console.log)
