@@ -18,8 +18,8 @@ let handler = async (m, { conn, usedPrefix }) => {
 *Name:*\n${username} ${registered ? '(' + name + ') ': ''}(@${who.replace(/@.+/, '')})${about ? '\n*About:*\n' + about : ''}
 
 
-*Number: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-Link:* wa.me/${who.split`@`[0]}${registered ? '\n*Age:* ' + age : ''}
+*Number:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+*Link:* wa.me/${who.split`@`[0]}${registered ? '\n*Age:* ' + age : ''}
 
 ______________
 
@@ -28,7 +28,7 @@ ______________
 *Role:* ${role}
 *Limit:* ${limit}
 *Registered:* ${registered ? 'Yes': 'No'}
-Premium: ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\n\nEXP claimed today ✅' : ''}
+Premium: ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\n\n______________\nEXP claimed today ✅' : ''}
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
