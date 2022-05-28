@@ -4,17 +4,17 @@ let handler = async (m, { conn, text }) => {
   let who
   if (m.isGroup) who = m.mentionedJid[0]
   else who = m.chat
-  if (!who) throw 'Tag salah satu lah'
+  if (!who) throw '*شخص مورد نظر را تگ کنید*'
   let txt = text.replace('@' + who.split`@`[0], '').trim()
-  if (!txt) throw 'Masukkan jumlah exp yang akan diberi'
-  if (isNaN(txt)) throw 'Hanya angka'
+  if (!txt) throw 'مقدار EXP برای انتقال را وارد کنید'
+  if (isNaN(txt)) throw '_فقط برای شماره ها_'
   let xp = parseInt(txt)
   let exp = xp
   let pjk = Math.ceil(xp * pajak)
   exp += pjk
   if (exp < 1) throw 'Minimal 1'
   let users = global.db.data.users
-  if (exp > users[m.sender].exp) throw 'Exp tidak mencukupi untuk mentransfer'
+  if (exp > users[m.sender].exp) throw 'شما EXP مورد نیاز برای انتقال را ندارید!'
   users[m.sender].exp -= exp
   users[who].exp += xp
 
