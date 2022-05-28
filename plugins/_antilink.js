@@ -5,7 +5,7 @@ module.exports = {
     let chat = global.db.data.chats[m.chat]
     let isGroupLink = linkRegex.exec(m.text)
 
-    if (chat.antiLink && isGroupLink && isBotAdmin) {
+    if (chat.antiLink && isGroupLink && isBotAdmin && !isAdmin) {
       m.reply('Link...')
       if (global.opts['restrict']) {
         if (!isAdmin || isBotAdmin) return true
