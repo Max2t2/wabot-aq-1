@@ -8,9 +8,9 @@ module.exports = {
 
 		if (before !== user.level) {
 			m.reply(`
-Congratulations, you have leveled up!
-*${before}* -> *${user.level}*
-use *.profile* to check
+تبریک میگم، لول شما ارتقا یافت!
+*${before}* >> *${user.level}*
+برای مشاهده از *profile.* استفاده کنید
 	`.trim())
 		}
 	}
