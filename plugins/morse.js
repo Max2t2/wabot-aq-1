@@ -147,7 +147,7 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
     }
     m.reply(Output_String)
   } else {
-    m.reply(`Kode morse encode / decode\nUsage :\n\nEncode : ${usedPrefix}${command} encode Hello World\nDecode : ${usedPrefix}${command} decode •••• • •-•• •-•• --- / •-- --- •-• •-•• -••`)
+    m.reply(`Morse code encode / decode\nUsage :\n\nEncode : ${usedPrefix}${command} encode Hello World\nDecode : ${usedPrefix}${command} decode •••• • •-•• •-•• --- / •-- --- •-• •-•• -••`)
   }
 }
 
