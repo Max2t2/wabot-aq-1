@@ -23,16 +23,16 @@ function pickRandom(list) {
 }
 
 const asupan = [
-"https://uupload.ir/view/yotub3kans_14010308_175457941_2c57.mp4/",
-"https://uupload.ir/view/vampires_land_14010308_175648131_qm2l.mp4/",
-"https://uupload.ir/view/levenero_14010308_181925200_qa6o.mp4/",
-"https://uupload.ir/view/dreamy.clip_14010308_175845651_dl6g.mp4/",
-"https://uupload.ir/view/gerberavid_14010308_182735436_fm3t.mp4/",
-"https://uupload.ir/view/marblevid.ir_14010308_182538880_spgk.mp4/",
-"https://uupload.ir/view/seavid_14010308_182352345_j3n.mp4/",
-"https://uupload.ir/view/sunset._area_14010308_182132191_iryi.mp4/",
-"https://uupload.ir/view/music_.land_girl_14010308_182958156_v5c0.mp4/",
-"https://uupload.ir/view/bloovid_14010308_182815720_lt8a.mp4/",
-"https://uupload.ir/view/violeteiw_14010308_183457517_etle.mp4/",
-"https://uupload.ir/view/rainysowil_14010308_183338629_h04g.mp4/"
+"https://g.top4top.io/m_2340v7lgt1.mp4",
+"https://h.top4top.io/m_2340a2tgf2.mp4",
+"https://i.top4top.io/m_234017nut4.mp4",
+"https://j.top4top.io/m_2340cg85d5.mp4",
+"https://k.top4top.io/m_2340t8jo76.mp4",
+"https://l.top4top.io/m_2340hx8p47.mp4",
+"https://a.top4top.io/m_2340l3fnj8.mp4",
+"https://b.top4top.io/m_234069v1o9.mp4",
+"https://c.top4top.io/m_2340ba50p10.mp4",
+"https://l.top4top.io/m_2340q4e2p1.mp4",
+"https://a.top4top.io/m_2340ro6h22.mp4",
+"https://b.top4top.io/m_2340sybrf3.mp4"
 ]
