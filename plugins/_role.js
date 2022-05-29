@@ -1,7 +1,4 @@
 const roles = {
-  /*
-  'Role Name': <Minimal Level To Obtain this Role>
-  */
   'Newbe': 0,
   'Soldier': 10,
   'Chat master': 20,
