@@ -26,7 +26,7 @@ let handler = async (m, { conn, text }) => {
     if (!result) throw result
     m.reply(`*${format}* = ${result}`)
   } catch (e) {
-    if (e == undefined) throw '*لطفا یک عملیات وارد کنید!* به عنوان مثال:\ncalc 5+2'
+    if (e == undefined) throw '*لطفا یک عملیات وارد کنید!* به عنوان مثال:\n\n*.calc 5+2*'
     throw 'Incorrect format! only 0-9 numbers and -, +, *, /, ×, ÷, π, e, (, ) symbols supported.'
   }
 }
