@@ -13,7 +13,7 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 برای دسترسی از *${text}* استفاده کنید.`)
     else return conn.sendButton(m.chat, `پیام شما با موفقیت با نام *${text}* ذخیره شد ✅
 
-از کد ${usedPrefix}get${which}${usedPrefix} ${text} برای مشاهده استفاده کنید.
+برای مشاهده از کد ${usedPrefix}get${which} استفاده کنید.
 
 اگر قابلیت Getmsg فعال باشد دیگر نیازی به استفاده از *get${which}${usedPrefix}* ندارید!`, '© surena', 'فعالسازی', '.1 getmsg', m)
 }
