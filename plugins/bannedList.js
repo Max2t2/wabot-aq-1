@@ -3,23 +3,23 @@ let handler = async (m, { conn }) => {
     let users = Object.entries(global.db.data.users).filter(user => user[1].banned)
 
     m.reply(`
-╭─「 banned chats 」
-│ Total : ${chats.length} Chat${chats ? '\n' + chats.map(([jid], i) => `
+╭─「 Banned chats 」
+│ Total: ${chats.length} Chats${chats ? '\n' + chats.map(([jid], i) => `
 │ ${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 │ ${jid}
 `.trim()).join('\n') : ''}
 ╰────
 
 ╭─「 Banned users 」
-│ Total : ${users.length} User${users ? '\n' + users.map(([jid], i) => `
+│ Total: ${users.length} Users${users ? '\n' + users.map(([jid], i) => `
 │ ${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 │ ${jid}
 `.trim()).join('\n') : ''}
 ╰────
 `.trim())
 }
-handler.help = ['bannedlist']
+handler.help = ['ban(ned)list']
 handler.tags = ['info']
-handler.command = /^listban(ned)?|ban(ned)?list|daftarban(ned)?$/i
+handler.command = /^ban(ned)?list|$/i
 
 module.exports = handler
