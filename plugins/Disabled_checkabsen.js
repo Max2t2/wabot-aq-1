@@ -21,7 +21,7 @@ ${list}
     conn.send2Button(m.chat, caption, '© surena', 'Absen', `${usedPrefix}absen`, 'Wipe', `${usedPrefix}-absen`, m)
 }
 handler.help = ['cekabsen']
-handler.tags = ['absen']
+handler.tags = ['disabled']
 handler.command = /^cekabsen$/i
 
 module.exports = handler
