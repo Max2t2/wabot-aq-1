@@ -20,6 +20,6 @@ let handler = async (m, { conn }) => {
 }
 handler.help = ['ban(ned)list']
 handler.tags = ['info']
-handler.command = /^ban(ned)?list|$/i
+handler.command = /^listban(ned)?|ban(ned)?list|daftarban(ned)?$/i
 
 module.exports = handler
