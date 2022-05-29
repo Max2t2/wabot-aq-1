@@ -32,7 +32,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
   }
 }
 handler.help = ['add', '+'].map(v => v + ' number,number')
-handler.tags = ['admin']
+handler.tags = ['disabled']
 handler.command = /^(add|\+)$/i
 handler.owner = false
 handler.mods = false
