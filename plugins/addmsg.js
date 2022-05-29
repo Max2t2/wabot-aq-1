@@ -13,8 +13,6 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 برای دسترسی از *${text}* استفاده کنید.`)
     else return conn.sendButton(m.chat, `پیام شما با موفقیت با نام *${text}* ذخیره شد ✅
 
-برای مشاهده از کد ${which}get${usedPrefix} استفاده کنید.
-
 اگر قابلیت Getmsg فعال باشد دیگر نیازی به استفاده از *get${which}${usedPrefix}* ندارید!`, '© surena', 'فعالسازی', '.1 getmsg', m)
 }
 handler.help = ['vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'add' + v + ' <teks>')
