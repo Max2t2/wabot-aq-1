@@ -1,10 +1,10 @@
-let handler = async (m, { conn, text }) => {
+let handler = async (m, { conn, text, usedPrefix }) => {
   let id = m.chat
   conn.math = conn.math ? conn.math : {}
   if (id in conn.math) {
     clearTimeout(conn.math[id][3])
     delete conn.math[id]
-    m.reply('متوجه نشدم')
+    m.reply('~ERROR~')
   }
   let val = text
     .replace(/[^0-9\-\/+*×÷πEe()piPI/]/g, '')
@@ -26,7 +26,7 @@ let handler = async (m, { conn, text }) => {
     if (!result) throw result
     m.reply(`*${format}* = ${result}`)
   } catch (e) {
-    if (e == undefined) throw '*Enter content!*\n\nFor example:\n.calc 1+1'
+    if (e == undefined) throw '*لطفا یک عملیات وارد کنید!* به عنوان مثال ${usedPrefix}calc 1+1'
     throw 'Incorrect format! only 0-9 numbers and -, +, *, /, ×, ÷, π, e, (, ) symbols supported.'
   }
 }
