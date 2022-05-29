@@ -3,8 +3,8 @@ let handler  = async (m, { conn, text }) => {
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
   let teks = text ? text : cc.text
   conn.reply(m.chat, `_Sent a broadcast message to ${chats.length} chats_`, m)
-  for (let id of chats) await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n' + readMore + '「 All Chats Broadcast 」\n' + randomID(32)), true).catch(_=>_)
-  m.reply('Finished Broadcasting All Chats :)')
+  for (let id of chats) await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n\n' + readMore + '「 All Chats Broadcast 」\n' + randomID(32)), true).catch(_=>_)
+  m.reply('Finished Broadcasting All Chats ✅')
 }
 handler.help = ['broadcast','bc'].map(v => v + ' <teks>')
 handler.tags = ['owner']
