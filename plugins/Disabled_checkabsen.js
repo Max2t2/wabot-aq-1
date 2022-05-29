@@ -25,3 +25,5 @@ handler.tags = ['absen']
 handler.command = /^cekabsen$/i
 
 module.exports = handler
+handler.owner = true 
+//Disabled because unknown plugin
