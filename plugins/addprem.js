@@ -2,10 +2,10 @@ let handler = async (m, { conn, text }) => {
     let who
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text
     else who = m.chat
-    if (!who) throw `Tag a person!`
-    if (global.prems.includes(who.split`@`[0])) throw 'He is already an premium!'
+    if (!who) throw `یک نفر را تگ کنید!`
+    if (global.prems.includes(who.split`@`[0])) throw 'کاربر در حال حاضر یک پرمیوم است!'
     global.prems.push(`${who.split`@`[0]}`)
-    conn.reply(m.chat, `@${who.split`@`[0]} is now premium!`, m, {
+    conn.reply(m.chat, `حالا @${who.split`@`[0]} یک پرمیوم است!`, m, {
         contextInfo: {
             mentionedJid: [who]
         }
