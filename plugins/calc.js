@@ -1,4 +1,4 @@
-let handler = async (m, { conn, text, usedPrefix }) => {
+let handler = async (m, { conn, text }) => {
   let id = m.chat
   conn.math = conn.math ? conn.math : {}
   if (id in conn.math) {
@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     if (!result) throw result
     m.reply(`*${format}* = ${result}`)
   } catch (e) {
-    if (e == undefined) throw '*لطفا یک عملیات وارد کنید!* به عنوان مثال ${usedPrefix}calc 1+1'
+    if (e == undefined) throw '*لطفا یک عملیات وارد کنید!* به عنوان مثال:\ncalc 5+2'
     throw 'Incorrect format! only 0-9 numbers and -, +, *, /, ×, ÷, π, e, (, ) symbols supported.'
   }
 }
