@@ -29,7 +29,7 @@ Bonus: ${poin} XP
     ]
 }
 handler.help = ['caklontong']
-handler.tags = ['game']
+handler.tags = ['disable']
 handler.command = /^caklontong/i
 handler.owner = true
 
