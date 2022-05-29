@@ -9,7 +9,7 @@ let handler = async (m, { conn, command, args }) => {
     conn.reply(m.chat, `-${xpperlimit * count} XP\n+ ${count} Limit`, m)
   } else conn.reply(m.chat, `Not enough XP to buy ${count} limit`, m)
 }
-handler.help = ['buy<jumlah limit>', 'buy <jumlah limit>', 'buyall']
+handler.help = ['buy <Amount>', 'buyall']
 handler.tags = ['xp']
 handler.command = /^buy([0-9]+)|buy|buyall$/i
 handler.owner = false
