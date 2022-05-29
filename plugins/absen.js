@@ -26,5 +26,6 @@ ${list}
 handler.help = ['absen']
 handler.tags = ['absen']
 handler.command = /^(absen|hadir|present)$/i
+handler.owner = true
 
 module.exports = handler
