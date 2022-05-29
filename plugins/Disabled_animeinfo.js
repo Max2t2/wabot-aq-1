@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   conn.sendFile(m.chat, image_url, '', animeingfo, m)
 }
 handler.help = ['anime <judul>']
-handler.tags = ['internet']
+handler.tags = ['disabled']
 handler.command = /^(anime|animeinfo)$/i
 handler.owner = true
 //maapin fatur :<
