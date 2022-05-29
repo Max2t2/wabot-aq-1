@@ -10,10 +10,10 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
     msgs[text] = M.fromObject(await m.getQuotedObj()).toJSON()
     if (db.data.chats[m.chat].getmsg) return m.reply(`پیام شما با موفقیت با نام *${text}* ذخیره شد ✅
     
-برای دسترسی از *${text}* استفاده کنید`)
+برای دسترسی از *${text}* استفاده کنید.`)
     else return conn.sendButton(m.chat, `پیام شما با موفقیت با نام *${text}* ذخیره شد ✅
 
-از کد get${which}${usedPrefix} ${text} برای مشاهده استفاده کنید
+از کد ${usedPrefix}get${which}${usedPrefix} ${text} برای مشاهده استفاده کنید.
 
 اگر قابلیت Getmsg فعال باشد دیگر نیازی به استفاده از *get${which}${usedPrefix}* ندارید!`, '© surena', 'فعالسازی', '.1 getmsg', m)
 }
