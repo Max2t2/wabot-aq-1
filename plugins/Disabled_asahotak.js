@@ -30,7 +30,7 @@ Bonus: ${poin} XP
     ]
 }
 handler.help = ['asahotak']
-handler.tags = ['game']
+handler.tags = ['disabled']
 handler.command = /^asahotak/i
 handler.owner = true
 
