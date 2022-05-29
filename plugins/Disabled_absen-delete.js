@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix, isAdmin, isOwner }) => {
     m.reply(`Absenteeism successfully removed`)
 }
 handler.help = ['hapusabsen']
-handler.tags = ['absen']
+handler.tags = ['disabled']
 handler.command = /^(delete|hapus|-)absen$/i
 handler.owner = true
 
