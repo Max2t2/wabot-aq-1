@@ -24,7 +24,7 @@ ${list}
     await conn.send2Button(m.chat, caption, '© surena', 'Absen', `${usedPrefix}absen`, 'Check', `${usedPrefix}cekabsen`, m)
 }
 handler.help = ['absen']
-handler.tags = ['absen']
+handler.tags = ['disabled']
 handler.command = /^(absen|hadir|present)$/i
 handler.owner = true
 
