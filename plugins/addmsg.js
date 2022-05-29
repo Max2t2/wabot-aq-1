@@ -3,19 +3,19 @@ let { WAMessageProto } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, command, usedPrefix, text }) => {
     let M = WAMessageProto.WebMessageInfo
     let which = command.replace(/\+|add/i, '')
-    if (!m.quoted) throw 'Reply to any message!'
-    if (!text) return conn.sendButton(m.chat, `Witch text you want to save?\n\nFor example:\n${usedPrefix + command} test`, '© surena', 'Messages List', `${usedPrefix}list${which}`, m)
+    if (!m.quoted) throw '*برروی پیام مورد نظر ریپلای بزنید*'
+    if (!text) return conn.sendButton(m.chat, `میخواهید پیام با چه نامی ذخیره شود؟\n\nبه عنوان مثال: *${command + usedPrefix}*`, '© surena', 'لیست پیام ها', `${usedPrefix}list${which}`, m)
     let msgs = db.data.msgs
-    if (text in msgs) return conn.sendButton(m.chat, `'${text}' has registered before, use another name!`, '© surena', 'Messages List', `${usedPrefix}list${which}`, m)
+    if (text in msgs) return conn.sendButton(m.chat, `پیامی با نام ~${text}~ قبلا ذخیره شده، لطفا نام دیگری انتخاب کنید!`, '© surena', 'لیست پیام ها', `${usedPrefix}list${which}`, m)
     msgs[text] = M.fromObject(await m.getQuotedObj()).toJSON()
-    if (db.data.chats[m.chat].getmsg) return m.reply(`Your message was saved successfully by name '${text}'
+    if (db.data.chats[m.chat].getmsg) return m.reply(`پیام شما با موفقیت با نام *${text}* ذخیره شد ✅
     
 Access by typing '${text}'`)
-    else return conn.sendButton(m.chat, `Your message was saved successfully by name '${text}'
+    else return conn.sendButton(m.chat, `پیام شما با موفقیت با نام *${text}* ذخیره شد ✅
 
-Access with ${usedPrefix}get${which} ${text}
+از کد get${which}${usedPrefix} ${text} برای مشاهده استفاده کنید
 
-If Getmsg == enable then there is no need to type *${usedPrefix}get${which}* anymore!`, '© surena', 'Enable', '.1 getmsg', m)
+اگر قابلیت Getmsg فعال باشد دیگر نیازی به استفاده از *get${which}${usedPrefix}* ندارید!`, '© surena', 'فعالسازی', '.1 getmsg', m)
 }
 handler.help = ['vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'add' + v + ' <teks>')
 handler.tags = ['database']
