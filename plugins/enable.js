@@ -7,18 +7,18 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   let isAll = false
   let isUser = false
   let gc = [
-    'welcome',
-    'detect',
-    'antilink',
-    'antisticker',
+    '(admin) welcome',
+    '(admin) detect',
+    '(admin) antilink',
+    '(admin) antisticker',
   ]
   let ch = [
-    'delete',
-    'antidelete',
-    'getmsg',
-    'document',
-    'viewonce',
-    'autolevelup'
+    '(admin) delete',
+    '(admin) antidelete',
+    '(admin) getmsg',
+    '(admin) document',
+    '(admin) viewonce',
+    '(admin) autolevelup'
   ]
   let o = [
     '(owner) public',
