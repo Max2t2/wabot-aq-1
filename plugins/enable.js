@@ -22,17 +22,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     'viewonce',
     'autolevelup'
   ]
-  let o = [
-    'public',
-    'mycontact',
-    'restrict',
-    'nyimak',
-    'autoread',
-    'anticall',
-    'pconly',
-    'gconly',
-    'jadibot'
-  ]
   switch (type) {
     // Grup
     case 'welcome':
