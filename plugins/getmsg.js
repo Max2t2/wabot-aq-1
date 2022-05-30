@@ -1,6 +1,6 @@
 let handler = async (m, { conn, command, usedPrefix, text, isROwner }) => {
     let which = command.replace(/get/i, '')
-    if (!text) return conn.sendButton(m.chat, `به دنبال کدام پیام هستید؟\n\به عنوان مثال :\n*${usedPrefix + command} test*`, '© surena', 'لیست پیام ها', `${usedPrefix}list${which}`, m)
+    if (!text) return conn.sendButton(m.chat, `به دنبال کدام پیام هستید؟\n\nبه عنوان مثال :\n*${usedPrefix + command} test*`, '© surena', 'لیست پیام ها', `${usedPrefix}list${which}`, m)
     let msgs = db.data.msgs
     if (!(text in msgs)) return conn.sendButton(m.chat, `'${text}' tidak terdaftar!`, '© surena', 'لیست پیام ها', `${usedPrefix}list${which}`, m)
     if (msgs[text].locked) if (!isROwner) return m.reply('Locked!')
