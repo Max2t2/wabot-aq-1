@@ -10,7 +10,7 @@ let handler = function (m) {
   })
 }
 handler.help = ['del(ete)']
-handler.tags = ['admin']
+handler.tags = ['info']
 handler.admin = true
 
 handler.command = /^del(ete)?$/i
