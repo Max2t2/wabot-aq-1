@@ -17,7 +17,8 @@ let handler = async (m) => {
   await conn.sendFile(m.chat, await res.buffer(), 'hd.jpg', 'Yes, hd, right?', m)
 }
 handler.help = ['hd (caption|reply media)', 'enhance (caption|reply media)']
-handler.tags = ['tools']
+handler.tags = ['disabled']
 handler.command = /^(hd|enhance)$/i
+handler.owner = true
 
 module.exports = handler
