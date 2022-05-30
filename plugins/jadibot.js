@@ -40,7 +40,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     conn.on('CB:action,,call', conn.onCall)
     conn.regenerateQRIntervalMs = null
     conn.connect().then(async ({ user }) => {
-      parent.reply(m.chat, 'Successfully connected to surena - mu.\n*NOTE: It is just a temporary bot*\n' + JSON.stringify(user, null, 2), m)
+      parent.reply(m.chat, 'Successfully connected to surena!\n*NOTE: It is just a temporary bot*\n' + JSON.stringify(user, null, 2), m)
       if (auth) return
       await parent.sendMessage(user.jid, `You can login without qr code, just with message! to get the full code, please send *${usedPrefix}getcode*`, MessageType.extendedText)
       parent.sendMessage(user.jid, `${usedPrefix + command} ${Buffer.from(JSON.stringify(conn.base64EncodedAuthInfo())).toString('base64')}`, MessageType.extendedText)
@@ -58,7 +58,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
         try {
           if (conn.state != 'close') return
           if (conn.user && conn.user.jid)
-            parent.sendMessage(conn.user.jid, `Koneksi terputus...`, MessageType.extendedText)
+            parent.sendMessage(conn.user.jid, `Connection lost...`, MessageType.extendedText)
           let i = global.conns.indexOf(conn)
           if (i < 0) return
           delete global.conns[i]
@@ -67,12 +67,12 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
       }, 30000)
     })
     global.conns.push(conn)
-  } else throw 'Tidak bisa membuat bot didalam bot!\n\nhttps://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=.jadibot'
+  } else throw 'Can not create a bot in a bot!\n\nhttps://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=.getsurena'
 }
-handler.help = ['jadibot']
-handler.tags = ['jadibot']
+handler.help = ['getsurena']
+handler.tags = ['surena']
 
-handler.command = /^jadibot$/i
+handler.command = /^getsurena/i
 
 handler.limit = true
 
