@@ -1,6 +1,6 @@
 let handler = async (m, { command, usedPrefix, text }) => {
     let which = command.replace(/get/i, '')
-    if (!text) return conn.sendButton(m.chat, `چه پیامی حذف شود؟\n\nبرای مثال: ${command + usedPrefix} test`, '© surena', 'Messages List', `${usedPrefix}list${which}`, m)
+    if (!text) return conn.sendButton(m.chat, `چه پیامی حذف شود؟\n\n*برای مثال :* ${usedPrefix + command} test`, '© surena', 'Messages List', `${usedPrefix}list${which}`, m)
     let msgs = global.db.data.msgs
     if (!text in msgs) return conn.sendButton(m.chat, `پیامی با نام ${text} وجود ندارد!`, '© surena', 'Messages List', `${usedPrefix}list${which}`, m)
     delete msgs[text]
