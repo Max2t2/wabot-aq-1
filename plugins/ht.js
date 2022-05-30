@@ -2,17 +2,17 @@ let handler = async (m, { conn, text }) => {
   conn.hartatahta = conn.hartatahta ? conn.hartatahta : {}
   if (m.chat in conn.hartatahta) throw 'کسانی هستند که در حال ساخت هستند\n*لطفا صبور باشید...*'
   else conn.hartatahta[m.chat] = true
-  m.reply('*در حال ساخت...*\nلطفا چند ثانیه صبور باشید')
+  m.reply('*در حال ساخت...*\nلطفا چند لحظه صبور باشید')
   try {
     let img = await ht(text ? text : ':v')
-    conn.sendFile(m.chat, img, 'Harta Tahta.png', '*©  surena*\nMade with SURENA AI', m)
+    conn.sendFile(m.chat, img, 'And_Its.png', '*©  surena*\nMade with SURENA AI', m)
   } finally {
     delete conn.hartatahta[m.chat]
   }
 }
-handler.help = ['tahta <teks>']
-handler.tags = ['nulis']
-handler.command = /^((harta)?tahta)$/i
+handler.help = ['andits <text>']
+handler.tags = ['maker']
+handler.command = /^((andits)?is)$/i
 handler.limit = true
 
 module.exports = handler
