@@ -20,6 +20,7 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['fakereply @mention <text>']
 handler.tags = ['fun']
 handler.command = /^(fitnah|fakereply)$/
+handler.group = true
 
 module.exports = handler
 
