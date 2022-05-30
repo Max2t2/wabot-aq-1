@@ -20,7 +20,8 @@ ${members > 1 ? `${members - reads.length - deliveries.length} remaining` : ''}
   })
 }
 handler.help = ['getsider']
-handler.tags = ['group']
+handler.tags = ['disabled']
+handler.owner = true
 
 handler.command = /^getsider$/
 
