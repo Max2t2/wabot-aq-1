@@ -2,7 +2,7 @@ let webp = require('node-webpmux')
 let util = require('util')
 
 let handler = async (m) => {
-    if (!m.quoted) return m.reply('*Reply to sticker*')
+    if (!m.quoted) return m.reply('*برروی استیکر مورد نظر ریپلای کنید*')
     let q = { message: { [m.quoted.mtype]: m.quoted } }
     if (/sticker/.test(m.quoted.mtype)) {
         let img = new webp.Image()
