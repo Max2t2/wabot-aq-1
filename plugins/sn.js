@@ -11,6 +11,6 @@ SN: ${sn}
 
 handler.help = ['ceksn']
 handler.tags = ['exp']
-handler.command = /^(ceksn)$/i
+handler.command = /^(sn)$/i
 handler.register = true
 module.exports = handler
