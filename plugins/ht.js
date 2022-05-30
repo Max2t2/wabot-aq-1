@@ -12,7 +12,7 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['info <text>']
 handler.tags = ['maker']
-handler.command = /^((andits)?is)$/i
+handler.command = /^andits$/i
 handler.limit = true
 
 module.exports = handler
