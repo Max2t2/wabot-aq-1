@@ -3,12 +3,12 @@ let handler = async (m, { conn, text }) => {
   let who
   if (m.isGroup) who = m.mentionedJid[0]
   else who = m.chat
-  if (!who) throw 'Tag one of members'
+  if (!who) throw '*کسی را تگ نکردید!*'
   txt = text.replace('@' + who.split`@`[0], '').trimStart()
   return conn.sendContact(m.chat, who, txt || conn.getName(who), m)
 }
 handler.help = ['save'].map(v => v + ' @mention <ContactName>')
-handler.tags = ['']
+handler.tags = ['tools']
 
 handler.command = /^save$/
 
