@@ -15,9 +15,9 @@ Last update on *${formatDate(repo.updated_at)}*
 
 👁  ${repo.watchers}   🔗  ${repo.forks}   ⭐  ${repo.stargazers_count}
 
-{repo.open_issues} Issues ${repo.description ? `
+${repo.open_issues} Issues ${repo.description ? `
 *Description:*\n${repo.description}` : ''}
-*Clone:\n* \`\`\`$ git clone ${repo.clone_url}\`\`\`
+*Clone:*\n \`\`\`git clone ${repo.clone_url}\`\`\`
 _________________________
 
 `.trim()
