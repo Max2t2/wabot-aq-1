@@ -6,7 +6,7 @@ let handler = async (m, { conn, text }) => {
   if (text.includes('@0')) who = '0@s.whatsapp.net'
   else if (m.isGroup) who = cm.participant = m.mentionedJid[0]
   else who = m.chat
-  if (!who) throw 'Tag that person'
+  if (!who) throw '*یک نفر رو تگ کنید!*'
   cm.key.fromMe = false
   cm.message[m.mtype] = copy(m.msg)
   let sp = '@' + who.split`@`[0]
@@ -17,6 +17,8 @@ let handler = async (m, { conn, text }) => {
     }
   })
 }
+handler.help = ['fakereply @mention <text>']
+handler.tags = ['fun']
 handler.command = /^(fitnah|fakereply)$/
 
 module.exports = handler
