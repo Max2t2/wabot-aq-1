@@ -39,7 +39,8 @@ Keyword: ${keywords || none}
   conn.sendFile(m.chat, url, 'media-fb', caption, m)
 }
 handler.help = ['fb'].map(v => v + ' <url>')
-handler.tags = ['downloader']
+handler.tags = ['disabled']
+handler.owner = true
 
 handler.command = /^f((b|acebook)(dl|download)?(er)?)$/i
 
