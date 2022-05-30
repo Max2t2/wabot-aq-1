@@ -11,7 +11,8 @@ let handler = async (m, { conn, text }) => {
     m.reply(teks)
 }
 handler.help = ['carigrup <pencarian>']
-handler.tags = ['tools']
+handler.tags = ['disabled']
+handler.owner = true
 
 handler.command = /^carigrup/i
 
