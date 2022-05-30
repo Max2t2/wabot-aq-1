@@ -7,7 +7,7 @@ let text = args.slice(1).join(' ')
   }), 'iss.png', '@surena', m)
 }
 
-handler.help = ['itssostupid', 'iss', 'stupid']
+handler.help = ['iss']
 handler.tags = ['maker']
 
 handler.command = /^(itssostupid|iss|stupid)$/i
