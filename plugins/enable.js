@@ -15,9 +15,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   let ch = [
     'delete',
     'antidelete',
-    'autodelvn',
     'getmsg',
-    'simi',
     'document',
     'viewonce',
     'autolevelup'
