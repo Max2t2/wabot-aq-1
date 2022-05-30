@@ -15,7 +15,8 @@ let handler = async (m, { conn, args }) => {
   }
 }
 handler.help = ['ighighlight'].map(v => v + ' <username>')
-handler.tags = ['downloader']
+handler.tags = ['disabled']
+handler.owner = true
 
 handler.command = /^(ighighlight?)$/i
 
