@@ -11,11 +11,11 @@ let handler = async (m, { conn, text }) => {
 		m.reply('broken')
 	}
 }
-//BY RIZXYU
 handler.help = ['delsesittt']
-handler.tags = ['game']
+handler.tags = ['disabled']
 handler.command = /^(delsesittt|dellsesitt)$/i
 handler.limit = true
+handler.owner = true
 
 handler.register = true
 handler.fail = null
