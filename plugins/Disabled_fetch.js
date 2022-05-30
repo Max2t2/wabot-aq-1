@@ -20,8 +20,9 @@ let handler = async (m, { text }) => {
   }
 }
 handler.help = ['fetch', 'get'].map(v => v + ' <url>')
-handler.tags = ['internet']
+handler.tags = ['disabled']
 handler.command = /^(fetch|get)$/i
+handler.owner = true
 
 module.exports = handler
 
