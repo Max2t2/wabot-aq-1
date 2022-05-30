@@ -16,10 +16,20 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     'delete',
     'antidelete',
     'getmsg',
-    'simi',
     'document',
     'viewonce',
     'autolevelup'
+  ]
+  let o = [
+    '(owner) public',
+    '(owner) mycontact',
+    '(owner) restrict',
+    '(owner) nyimak',
+    '(owner) autoread',
+    '(owner) anticall',
+    '(owner) pconly',
+    '(owner) gconly',
+    '(owner) jadibot'
   ]
   switch (type) {
     // Grup
@@ -143,7 +153,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ╭─「 Options 」${isOwner ? '\n' + o.map(v => '│ ' + v).join`\n` : ''}${m.isGroup ? '\n' + gc.map(v => '│ ' + v).join`\n` : ''}
 ${ch.map(v => '│ ' + v).join`\n`}
 ╰────
-
 For example:
 ${usedPrefix}enable welcome
 ${usedPrefix}disable welcome
