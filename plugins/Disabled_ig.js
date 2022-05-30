@@ -21,7 +21,8 @@ ${caption}
     conn.sendFile(m.chat, url, 'ig' + (type == 'video' ? '.mp4' : '.jpg'), text, m)
 }
 handler.help = ['ig'].map(v => v + ' <url>')
-handler.tags = ['downloader']
+handler.tags = ['disabled']
+handler.owner = true
 
 handler.command = /^(ig(dl)?)$/i
 
