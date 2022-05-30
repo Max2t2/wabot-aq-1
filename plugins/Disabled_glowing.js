@@ -4,7 +4,8 @@ let handler = async (m, { conn, text }) => {
   await conn.sendFile(m.chat, global.API('xteam', '/videomaker/glowing', { text: teks }, 'APIKEY'), 'glowing.mp4', teks, m)
 }
 handler.help = ['glowing'].map((v) => v + " <text>")
-handler.tags = ['videomaker']
+handler.tags = ['disabled']
+handler.owner = true
 
 handler.command = /^glowing$/i
 
