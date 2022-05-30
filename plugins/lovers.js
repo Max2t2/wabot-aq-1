@@ -13,9 +13,9 @@ function handler(m, { groupMetadata }) {
         }
     })
 }
-handler.help = ['jadian']
-handler.tags = ['main']
-handler.command = ['jadian']
+handler.help = ['lovers']
+handler.tags = ['fun']
+handler.command = ['lovers']
 handler.group = true
 handler.limit = true
 
