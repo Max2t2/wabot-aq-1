@@ -12,6 +12,7 @@ ${list}
 `.trim())
 }
 handler.help = ['kbbi <teks>']
-handler.tags = ['internet']
+handler.tags = ['disabled']
 handler.command = /^kbbi$/i
 module.exports = handler
+handler.owner = true
