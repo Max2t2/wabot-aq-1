@@ -10,7 +10,7 @@ let handler = async (m, { conn }) => {
 handler.help = ['cat']
 handler.tags = ['internet']
 
-handler.command = /^(meme)$/i
+handler.command = /^(cat)$/i
 
 handler.group = false
 
