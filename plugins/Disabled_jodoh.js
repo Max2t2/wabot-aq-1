@@ -30,8 +30,9 @@ ${negatif}
 
 }
 handler.help = ['jodoh'].map(v => v + ' <nama>|<nama doi>')
-handler.tags = ['fun']
+handler.tags = ['disabled']
 handler.command = /^(jodoh)$/i
+handler.owner = true
 
 handler.limit = true
 
