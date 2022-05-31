@@ -10,7 +10,8 @@ let handler  = async (m, { command, conn, text }) => {
   }, 'APIKEY'), 'nulis.jpg', 'Nahhh sudah jadi...', m)
 }
 handler.help = new Array(6).fill('magernulis').map((v, i) => v + (i + 1) + ' <teks>')
-handler.tags = ['nulis']
+handler.tags = ['disabled']
+handler.owner = true
 
 handler.command = /^magernulis[1-6]?$/i
 
