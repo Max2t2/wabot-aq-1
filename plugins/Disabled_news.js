@@ -12,7 +12,8 @@ ${json.url}
   `.trim(), m)
 }
 handler.help = ['detik', 'kompas', 'liputan6', 'tribun', 'jalantikus']
-handler.tags = ['berita']
+handler.tags = ['disabled']
+handler.owner = true
 
 handler.command = /^detik|kompas|liputan6|tribun|jalantikus$/i
 
