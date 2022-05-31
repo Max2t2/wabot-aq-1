@@ -106,6 +106,8 @@ let handler = (m, { conn, usedPrefix, command, text }) => {
 }
 
 handler.command = /^(koboy)/i
+handler.tags = ['disabled']
+handler.owner = true
 
 module.exports = handler
 
