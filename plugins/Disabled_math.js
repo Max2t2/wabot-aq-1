@@ -24,8 +24,9 @@ For example *${usedPrefix}math medium*
   ]
 }
 handler.help = ['math <mode>']
-handler.tags = ['game']
+handler.tags = ['disabled']
 handler.command = /^math/i
+handler.owner = true
 
 module.exports = handler
 
