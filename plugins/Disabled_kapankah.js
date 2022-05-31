@@ -9,10 +9,10 @@ let handler = async (m, { conn, text }) => {
 } : {})
 }
 handler.help = ['', 'kah'].map(v => 'kapan' + v + ' <text>?')
-handler.tags = ['kerang']
+handler.tags = ['disabled']
 handler.customPrefix = /(\?$)/
 handler.command = /^kapan(kah)?$/i
-handler.owner = false
+handler.owner = true
 handler.mods = false
 handler.premium = false
 handler.group = false
