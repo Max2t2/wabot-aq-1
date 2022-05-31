@@ -31,9 +31,9 @@ ${hasil.map(v => `
 }
 
 handler.help = ['Layarkaca'].map(v => v + ' <query>')
-handler.tags = ['internet']
+handler.tags = ['disabled']
 handler.command = /^(layarkaca)$/i
-handler.owner = false
+handler.owner = true
 handler.mods = false
 handler.premium = false
 handler.group = false
