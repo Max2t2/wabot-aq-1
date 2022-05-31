@@ -19,7 +19,8 @@ ${json.url}
 `.trim(), m)
 }
 handler.help = ['resep <makanan>', 'masak <makanan>']
-handler.tags = ['internet']
+handler.tags = ['disabled']
 handler.command = /^(resep|masak)$/i
+handler.owner
 
 module.exports = handler
