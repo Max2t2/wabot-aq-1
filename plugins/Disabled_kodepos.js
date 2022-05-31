@@ -9,8 +9,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     m.reply(mes)
 }
 handler.help = ['kodepos <kota>']
-handler.tags = ['tools']
+handler.tags = ['disabled']
 handler.command = /^kodepos$/i
+handler.owner = true
 
 handler.limit = true
 
