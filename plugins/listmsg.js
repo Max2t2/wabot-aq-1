@@ -35,8 +35,7 @@ ${list}
 Access with:
 *${usedPrefix}get${which}* <name>
 
-If getmsg is enabled then there is no need to type anymore *${usedPrefix}get${which}*\n
-`.trim(), '© surena', 'Enable', '.1 getmsg', m)
+اگر قابلیت Getmsg فعال باشد دیگر نیازی به استفاده از *get${which}${usedPrefix}* ندارید!`.trim(), '© surena', 'فعالسازی', '.1 getmsg', m)
 }
 handler.help = ['all', 'doc', 'vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'list' + v)
 handler.tags = ['database']
