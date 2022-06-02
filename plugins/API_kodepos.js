@@ -14,5 +14,6 @@ handler.command = /^kodepos$/i
 handler.owner = true
 
 handler.limit = true
+handler.disabled = true
 
 module.exports = handler
