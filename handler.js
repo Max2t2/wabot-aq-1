@@ -65,10 +65,10 @@ module.exports = {
           if (!('isBanned' in chat)) chat.isBanned = false
           if (!('welcome' in chat)) chat.welcome = false
           if (!('detect' in chat)) chat.detect = false
-          if (!('sWelcome' in chat)) chat.sWelcome = ''
-          if (!('sBye' in chat)) chat.sBye = ''
-          if (!('sPromote' in chat)) chat.sPromote = ''
-          if (!('sDemote' in chat)) chat.sDemote = ''
+          if (!('sWelcome' in chat)) chat.sWelcome = 'Welcome to our group!'
+          if (!('sBye' in chat)) chat.sBye = 'Bye bye'
+          if (!('sPromote' in chat)) chat.sPromote = '@mention is now an admin!'
+          if (!('sDemote' in chat)) chat.sDemote = '@mention no longer an admin'
           if (!('delete' in chat)) chat.delete = true
           if (!('antiLink' in chat)) chat.antiLink = false
           if (!('antiSticker' in chat)) chat.antiSticker = false
@@ -79,10 +79,10 @@ module.exports = {
           isBanned: false,
           welcome: false,
           detect: false,
-          sWelcome: '',
-          sBye: '',
-          sPromote: '',
-          sDemote: '',
+          sWelcome: 'Welcome to our group!',
+          sBye: 'Bye bye',
+          sPromote: '@mention is now an admin!',
+          sDemote: '@mention no longer an admin',
           delete: true,
           antiLink: false,
           antiSticker: false,
@@ -94,23 +94,23 @@ module.exports = {
         var setting = global.db.data.settings[this.user.jid]
         if (typeof setting !== 'object') global.db.data.settings[this.user.jid] = {}
         if (setting) {
-          if (!('anticall' in setting)) setting.anticall = false
+          if (!('anticall' in setting)) setting.anticall = true
           if (!('autoread' in setting)) setting.autoread = false
           if (!('nyimak' in setting)) setting.nyimak = false
           if (!('restrict' in setting)) setting.restrict = false
           if (!('self' in setting)) setting.self = false
           if (!('pconly' in setting)) setting.pconly = false
           if (!('gconly' in setting)) setting.gconly = false
-          if (!('jadibot' in setting)) setting.jadibot = false
+          if (!('jadibot' in setting)) setting.jadibot = true
         } else global.db.data.settings[this.user.jid] = {
-          anticall: false,
+          anticall: true,
           autoread: false,
           nyimak: false,
           restrict: false,
           self: false,
           pconly: false,
           gconly: false,
-          jadibot: false,
+          jadibot: true,
         }
       } catch (e) {
         console.error(e)
@@ -309,7 +309,7 @@ module.exports = {
                 console.error(e)
               }
             }
-            if (m.limit) m.reply(+ m.limit + ' Limit terpakai')
+            if (m.limit) m.reply(+ m.limit + ' Limit used')
           }
           break
         }
@@ -383,7 +383,7 @@ module.exports = {
       case 'promote':
         text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
       case 'demote':
-        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```no longer an Admin```')
         text = text.replace('@user', '@' + participants[0].split('@')[0])
         if (chat.detect) m.reply(text)
         break
@@ -427,15 +427,15 @@ To turn off this feature, type
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'This command can only be used by _*Owner*_ !',
-    owner: 'This command can only be used by _*Bot Owner*_ !',
-    mods: 'This command can only be used by _*Moderator*_ !',
-    premium: 'This command can only be used by _*premium*_ members !',
-    group: 'This command can only be used in groups!',
-    private: 'This command can only be used in Private Chat!',
-    admin: 'This command is only for *Admin!*',
-    botAdmin: 'Make bots an *Admin* to use this command!',
-    unreg: 'Please register to use this feature by typing:\n\n*.register name.age*\n\nFor example: *.register amir.16*'
+    rowner: 'این دستور برای _*Owner*_ میباشد!',
+    owner: 'این دستور برای _*Bot Owner*_ میباشد!',
+    mods: 'این دستور برای _*Moderator*_ میباشد!',
+    premium: 'این دستور برای اعضای _*premium*_ میباشد!',
+    group: 'از این دستور فقط در _گروه ها_ میتوان استفاده کرد!',
+    private: 'از این دستور فقط در _PV_ میتوان استفاده کرد',
+    admin: 'این دستور برای *Admin* میباشد!',
+    botAdmin: 'برای استفاده از این دستور ربات را ادمین کنید!',
+    unreg: 'برای استفاده از این دستور لطفا با کد register. ثبت نام کنید'
   }[type]
   if (msg) return m.reply(msg)
 }
