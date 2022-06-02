@@ -2,7 +2,7 @@ module.exports = Object.assign(async function handler(m, { text }) {
     global.db.data.sticker = global.db.data.sticker || {}
     if (!m.quoted) throw '*بر روی پیام ریپلای بزنید*'
     if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
-    if (!text) throw `Tidak ada teks`
+    if (!text) throw `متنی وارد نشده!`
     let sticker = global.db.data.sticker
     let hash = m.quoted.fileSha256.toString('hex')
     if (sticker[hash] && sticker[hash].locked) throw 'You have no permission to change this sticker command'
