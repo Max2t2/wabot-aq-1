@@ -20,7 +20,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-   ${'*```👇 Join Us 👇```*'}
+   ${'```👇 Join Us 👇```'}
   https://chat.whatsapp.com/DHHxj6cS4m2I97PYRlO0MA
   
 ╭─「 %me 」
@@ -43,9 +43,7 @@ const defaultMenu = {
   footer: '╰────\n',
   after: `
 *© surena* | *%version*
-${'```👇 Join Us 👇```'}
-
-https://chat.whatsapp.com/DHHxj6cS4m2I97PYRlO0MA
+_Surena made by NodeJS_
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
