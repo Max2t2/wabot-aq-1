@@ -25,7 +25,7 @@ _________________________
     m.reply(str)
 }
 handler.help = ['githubsearch'].map(v => v + ' <query>')
-handler.tags = ['tools']
+handler.tags = ['github']
 
 handler.command = /^g(ithub|h)search$/i
 
