@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text, participants }) => {
   let users = participants.map(u => u.jid)
-  m.reply(text + '\n' + readmore + users.map(v => '@' + v.replace(/@.+/, '')).join`\n`, null, {
+  m.reply(text + '\n' + readMore + users.map(v => '@' + v.replace(/@.+/, '')).join`\n`, null, {
     contextInfo: { mentionedJid: users }
   })
 }
@@ -10,3 +10,4 @@ handler.admin = true
 handler.group = true
 
 module.exports = handler
+const readMore = more.repeat(4001)
