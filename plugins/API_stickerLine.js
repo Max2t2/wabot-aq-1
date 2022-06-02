@@ -29,6 +29,7 @@ handler.tags = ['sticker']
 handler.command = /^(stic?kerline)$/i
 
 handler.limit = true
+handler.disabled = true
 
 module.exports = handler
 
