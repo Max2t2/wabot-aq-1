@@ -36,7 +36,7 @@ ${usedPrefix + command} your messages id
     }
 
 }
-handler.help = ['translate'].map(v => v + ' <lang> <text>')
+handler.help = ['tr(anslate)'].map(v => v + ' <lang> <text>')
 handler.tags = ['tools']
 handler.command = /^(tr(anslate)?)$/i
 handler.limit = false
