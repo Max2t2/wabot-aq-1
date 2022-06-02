@@ -2,6 +2,8 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
+  ${'```👇 Join Us 👇```'}
+  https://chat.whatsapp.com/DHHxj6cS4m2I97PYRlO0MA
   'main': 'Main',
   'game': 'Game',
   'xp': 'Exp & Limit',
@@ -39,8 +41,9 @@ const defaultMenu = {
   body: '│ • %cmd %islimit %isPremium',
   footer: '╰────\n',
   after: `
-*© surena* | %version*
-${'```Join Us```'}
+*© surena* | *%version*
+${'```👇 Join Us 👇```'}
+
 https://chat.whatsapp.com/DHHxj6cS4m2I97PYRlO0MA
 `,
 }
