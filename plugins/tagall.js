@@ -1,10 +1,10 @@
 let handler = async (m, { conn, text, participants }) => {
   let users = participants.map(u => u.jid)
-  m.reply('📣' + text + '\n' + readMore + users.map(v => '@' + v.replace(/📣/@.+/, '')).join`\n`, null, {
+  m.reply(text + '\n' + readMore + users.map(v => '@' + v.replace(/@.+/, '')).join`\n`, null, {
     contextInfo: { mentionedJid: users }
   })
 }
-handler.tags = ['group']
+handler.tags = ['group'].map(v => v + ' <text>')
 handler.command = ['tagall']
 
 handler.admin = true
