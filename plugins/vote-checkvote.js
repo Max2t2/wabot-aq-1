@@ -10,7 +10,7 @@ Reasson: ${reason}
 
 ╭─「 Upvotes 👍 」
 │ _Total: ${upvote.length}_
-│ ${upvote.map(u => '@' + u.split('@')[0]).join('\n')}
+│ ${upvote.map(u => '@' + u.split('@')[0]).join('\n| ')}
 ╰────
 ╭─「 Devotes 👎 」
 │ _Total: ${devote.length}_
