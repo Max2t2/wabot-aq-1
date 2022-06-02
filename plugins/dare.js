@@ -29,7 +29,7 @@ let handler = async (m, { conn }) => {
 	conn.sendFile(m.chat, img, 'maker.jpeg', `*جرات*\n\n“${pickRandom(dares)}”`, m, false, { thumbnail: Buffer.alloc(0) })
 }
 handler.help = ['dare']
-handler.tags = ['fun']
+handler.tags = ['game']
 handler.command = /^(dare|berani|tantangan)$/i
 handler.limit = true
 
