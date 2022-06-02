@@ -8,5 +8,6 @@ handler.tags = ['disabled']
 handler.owner = true
 
 handler.command = /^poly$/i
+handler.disabled = true
 
 module.exports = handler
