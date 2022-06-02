@@ -17,6 +17,7 @@ handler.owner = true
 handler.disabled = true
 
 handler.command = /^detik|kompas|liputan6|tribun|jalantikus$/i
+handler.disabled = true
 
 
 module.exports = handler
