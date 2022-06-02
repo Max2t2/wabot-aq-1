@@ -21,3 +21,4 @@ handler.owner = true
 handler.command = /^(ighighlight?)$/i
 
 module.exports = handler
+handler.disabled = true
