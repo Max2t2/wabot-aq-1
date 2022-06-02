@@ -6,8 +6,9 @@ let handler = async (m, { text }) => {
   else throw json
 }
 handler.help = ['simi', 'simsimi', 'simih'].map(v => v + ' <teks>')
-handler.tags = ['fun']
+handler.tags = ['disabled']
 handler.command = /^((sim)?simi|simih)$/i
+handler.owner = true
 
 module.exports = handler
 
