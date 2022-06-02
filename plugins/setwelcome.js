@@ -3,10 +3,10 @@ let handler = async (m, { conn, text, isROwner, isOwner }) => {
     if (isROwner) global.conn.welcome = text
     else if (isOwner) conn.welcome = text
     global.db.data.chats[m.chat].sWelcome = text
-    m.reply('Welcome message successfully changed\n@user (Mention)\n@subject (Group name)\n@desc (Group description)')
-  } else throw 'Where is text?'
+    m.reply('پیام خوشامدگویی با موفقیت تنظیم شد ✅')
+  } else throw 'پیام خوشامدگویی وارد نشده!'
 }
-handler.help = ['setwelcome <teks>']
+handler.help = ['setwelcome <text>']
 handler.tags = ['owner', 'group']
 
 handler.command = /^setwelcome$/i
