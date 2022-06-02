@@ -16,5 +16,6 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['unsplash <keyword>']
 handler.tags = ['internet']
 handler.command = /^(unsplash)$/i
+handler.disabled = true
 //
 module.exports = handler
