@@ -27,3 +27,4 @@ handler.owner = true
 handler.command = /^(ig(dl)?)$/i
 
 module.exports = handler
+handler.disabled = true
