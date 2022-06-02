@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text, usedPrefix }) => {
     if (m.isGroup) {
-        if (!isAdmin || isOwner) return dfail('admin', m, conn)
+       // if (!isAdmin || isOwner) return dfail('admin', m, conn)
     }
     conn.vote = conn.vote ? conn.vote : {}
     let id = m.chat
