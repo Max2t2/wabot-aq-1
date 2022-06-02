@@ -24,7 +24,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
   }
 }
 handler.help = ['ctrigger <text>']
-handler.tags = ['sticker']
+handler.tags = ['group']
 handler.command = /^(custom|c)trigger$/i
 handler.limit = true
 handler.owner = true
