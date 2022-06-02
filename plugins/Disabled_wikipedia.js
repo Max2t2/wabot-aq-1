@@ -7,7 +7,7 @@ let handler = async (m, { text }) => {
   if (json.result.status) m.reply(`${json.result.result}\n\n@Fatur`)
   else throw json
 }
-handler.help = ['wikipedia'].map(v => v + ' <apa>')
+handler.help = ['wikipedia'].map(v => v + ' <query>')
 handler.tags = ['internet']
 handler.command = /^(wiki|wikipedia)$/i
 //belajar ngocok
