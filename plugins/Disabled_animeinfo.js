@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `Witch anime you want?\n\nFor example:\n${usedPrefix + command} naruto`
+  if (!text) throw `Uhm.. teksnya mana?\n\nContoh:\n${usedPrefix + command} naruto`
   let res = await fetch(API('https://api.jikan.moe', '/v3/search/anime', { q: text }))
   if (!res.ok) throw await res.text()
   let json = await res.json()
@@ -26,8 +26,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   conn.sendFile(m.chat, image_url, '', animeingfo, m)
 }
 handler.help = ['anime <judul>']
-handler.tags = ['disabled']
+handler.tags = ['internet']
 handler.command = /^(anime|animeinfo)$/i
-handler.owner = true
 //maapin fatur :<
 module.exports = handler
