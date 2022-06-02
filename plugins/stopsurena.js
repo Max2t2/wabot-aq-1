@@ -1,12 +1,12 @@
 let handler  = async (m, { conn }) => {
-  if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, 'Kenapa nggk langsung ke terminalnya?', m)
+  if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, 'Why go directly to the terminal?', m)
   else {
-    await conn.reply(m.chat, 'Goodbye bot :\')', m)
+    await conn.reply(m.chat, 'سورنا توسط توسعه دهندگان خاموش شد...')', m)
     conn.close()
   }
 }
-handler.help = ['berhenti','stop']
-handler.tags = ['jadibot']
+handler.help = ['stop']
+handler.tags = ['surena']
 handler.command = /^(berhenti|stop)$/i
 handler.owner = true
 handler.mods = false
