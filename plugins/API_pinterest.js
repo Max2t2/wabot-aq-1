@@ -17,5 +17,6 @@ handler.help = ['pinterest <keyword>']
 handler.tags = ['disabled']
 handler.owner = true
 handler.command = /^(pinterest)$/i
+handler.disabled = true
 
 module.exports = handler
