@@ -2,21 +2,27 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
+  'premium': 'Premium',
+  'Account': 'Account',
+  'xp': 'Exp & Limit',
+  'info': 'Info',
   'main': 'Main',
   'game': 'Game',
-  'xp': 'Exp & Limit',
   'sticker': 'Sticker',
-  'group': 'Group',
-  'premium': 'Premium',
+  'audio' : 'Audio'
+  'Media' : 'Media'
+  'fun': 'Fun',
+  'tools': 'Tools',
   'internet': 'Internet',
   'downloader': 'Downloader',
-  'tools': 'Tools',
-  'fun': 'Fun',
+  'github': 'Github',
+  'maker': 'Maker',
   'database': 'Database',
+  'Admin': 'Admin',
+  'group': 'Group',
   'vote': 'Voting',
   'owner': 'Owner',
   'host': 'Host',
-  'info': 'Info',
 }
 const defaultMenu = {
   before: `
