@@ -9,8 +9,8 @@ const dir = [
 let handler = async (m, { conn }) => {
   conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dadu.webp', '', m)
 }
-handler.help = ['dadu']
+handler.help = ['Dice']
 handler.tags = ['sticker', 'fun']
-handler.command = /^dadu$/i
+handler.command = /^dice$/i
 
 module.exports = handler
