@@ -44,6 +44,7 @@ handler.help = ['start', 'leave', 'next']
 handler.tags = 'disabled'
 handler.command = ['start', 'leave', 'next']
 handler.owner = true
+handler.disabled = true
 
 handler.private = true
 
