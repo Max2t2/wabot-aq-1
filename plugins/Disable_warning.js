@@ -21,6 +21,7 @@ handler.command = /^warn$/i
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
+handler.disabled = true
 
 module.exports = handler
 
