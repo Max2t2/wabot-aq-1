@@ -17,5 +17,6 @@ handler.disabled = true
 handler.command = /^magernulis[1-6]?$/i
 
 handler.limit = true
+handler.disabled = true
 
 module.exports = handler
