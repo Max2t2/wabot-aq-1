@@ -6,15 +6,15 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.sendButton(m.chat, `
 「 Voting 」
 
-Reasson: ${reason}
+Reason: ${reason}
 
 ╭─「 Upvotes 👍 」
 │ _Total: ${upvote.length}_
-│ ${upvote.map(u => '@' + u.split('@')[0]).join('\n| ')}
+│ ${upvote.map(u => '@' + u.split('@')[0]).join('\n │ ')}
 ╰────
 ╭─「 Devotes 👎 」
 │ _Total: ${devote.length}_
-│ ${devote.map(u => '@' + u.split('@')[0]).join('\n│ ')}
+│ ${devote.map(u => '@' + u.split('@')[0]).join('\n │ ')}
 ╰────
 `.trim(), '© surena', 'باطل کردن', `${usedPrefix}-vote`, m)
 }
