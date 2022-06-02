@@ -32,6 +32,6 @@ handler.command = ['tagme']
 // handler.exp = 0
 handler.level = 6
 
-handler.disabled = false
+handler.disabled = true
 
 module.exports = handler
