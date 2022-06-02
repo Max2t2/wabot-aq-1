@@ -4,7 +4,8 @@ let handler = async (m, { conn, text, participants }) => {
     contextInfo: { mentionedJid: users }
   })
 }
-handler.tags = ['group'].map(v => v + ' <text>')
+handler.help = ['group'].map(v => v + ' <text>')
+handler.tags = ['change']
 handler.command = ['tagall']
 
 handler.admin = true
