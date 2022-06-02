@@ -19,7 +19,7 @@ let handler = async (m, { conn, command, usedPrefix, text, isROwner }) => {
     // m.reply(`[debug]\n${require('util').format(_m)}`)
     await _m.copyNForward(m.chat, true)
 }
-handler.help = ['vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'get' + v + ' <teks>')
+handler.help = ['vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'get' + v + ' <text>')
 handler.tags = ['database']
 handler.command = /^get(vn|msg|video|audio|img|stic?ker|gif)$/
 
