@@ -35,7 +35,7 @@ let handler = async (m, { conn }) => {
 ]  // tambahin kata kata sendiri 
 	conn.sendFile(m.chat, img, 'maker.jpeg', `*حقیقت*\n\n“${pickRandom(trut)}”`, m, false, { thumbnail: Buffer.alloc(0) })
 }
-handler.help = ['truth']
+handler.help = ['Game']
 handler.tags = ['fun']
 handler.command = /^(truth|kebenaran|kejujuran)$/i
 handler.limit = true
