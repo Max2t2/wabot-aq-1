@@ -6,13 +6,13 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.sendButton(m.chat, `
 「 Voting 」
 
-Alasan: ${reason}
+Reasson: ${reason}
 
-╭─「 Upvotes 」
+╭─「 Upvotes 👍 」
 │ _Total: ${upvote.length}_
 │ ${upvote.map(u => '@' + u.split('@')[0]).join('\n')}
 ╰────
-╭─「 Devotes 」
+╭─「 Devotes 👎 」
 │ _Total: ${devote.length}_
 │ ${devote.map(u => '@' + u.split('@')[0]).join('\n│ ')}
 ╰────
