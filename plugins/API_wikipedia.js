@@ -10,5 +10,6 @@ let handler = async (m, { text }) => {
 handler.help = ['wikipedia'].map(v => v + ' <query>')
 handler.tags = ['internet']
 handler.command = /^(wiki|wikipedia)$/i
+handler.disabled = true
 //belajar ngocok
 module.exports = handler
