@@ -22,6 +22,7 @@ handler.tags = ['sticker']
 handler.command = /^(stic?kertele(gram)?)$/i
 
 handler.limit = true
+handler.disabled = true
 
 module.exports = handler
 
