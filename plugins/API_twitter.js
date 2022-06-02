@@ -21,5 +21,6 @@ handler.tags = ['downloader']
 handler.command = /^twitter$/i
 
 handler.limit = true
+handler.disabled = true
 
 module.exports = handler
