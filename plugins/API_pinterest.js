@@ -14,7 +14,8 @@ ${text}
 `.trim(), m)
 }
 handler.help = ['pinterest <keyword>']
-handler.tags = ['internet']
+handler.tags = ['disabled']
+handler.owner = true
 handler.command = /^(pinterest)$/i
 
 module.exports = handler
