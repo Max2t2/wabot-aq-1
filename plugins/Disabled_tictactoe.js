@@ -62,5 +62,6 @@ ${usedPrefix}${command} ${text}` : ''))
 handler.help = ['tictactoe', 'ttt'].map(v => v + ' [custom room name]')
 handler.tags = ['game']
 handler.command = /^(tictactoe|t{3})$/
+handler.disabled = true
 
 module.exports = handler
