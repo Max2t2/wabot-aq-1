@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let util = require('util')
 let handler = async (m, { text }) => {
-  if (!/^https?:\/\//.test(text)) throw 'Awali *URL* dengan http:// atau https://'
+  if (!/^https?:\/\//.test(text)) throw 'Enter URL link!\n\nStart with *http://*'
   let _url = new URL(text)
   let url = global.API(_url.origin, _url.pathname, Object.fromEntries(_url.searchParams.entries()), 'APIKEY')
   let res = await fetch(url)
@@ -19,9 +19,9 @@ let handler = async (m, { text }) => {
     m.reply(txt.slice(0, 65536) + '')
   }
 }
-handler.help = ['fetch', 'get'].map(v => v + ' <url>')
-handler.tags = ['disabled']
-handler.command = /^(fetch|get)$/i
+handler.help = ['inspect', 'get'].map(v => v + ' <url>')
+handler.tags = ['internet']
+handler.command = /^(inspect|get)$/i
 handler.owner = true
 
 module.exports = handler
