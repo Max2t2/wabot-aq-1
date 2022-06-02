@@ -12,6 +12,7 @@ let handler  = async (m, { command, conn, text }) => {
 handler.help = new Array(6).fill('magernulis').map((v, i) => v + (i + 1) + ' <teks>')
 handler.tags = ['disabled']
 handler.owner = true
+handler.disabled = true
 
 handler.command = /^magernulis[1-6]?$/i
 
