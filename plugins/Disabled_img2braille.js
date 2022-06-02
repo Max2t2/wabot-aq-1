@@ -17,5 +17,6 @@ async function handler(m) {
 handler.command = handler.help = ['test']
 handler.tags = ['tools']
 handler.owner = true
+handler.disabled = true
 
 module.exports = handler
