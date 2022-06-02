@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     }
     conn.vote = conn.vote ? conn.vote : {}
     let id = m.chat
-    if (id in conn.vote) return conn.send2Button(m.chat, `در این گروه یک رای گیری فعال وجود دارد!`, '© surena', 'بررسی', `${usedPrefix}cekvote`, 'باطل کردن', `${usedPrefix}-vote`, conn.vote[id][3])
+    if (id in conn.vote) return conn.send2Button(m.chat, `در این گروه یک رای گیری فعال وجود دارد!`, '© surena', 'بررسی', `${usedPrefix}checkvote`, 'باطل کردن', `${usedPrefix}-vote`, conn.vote[id][3])
     conn.vote[id] = [
         text,
         [],
@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
         await conn.send2Button(m.chat, text, '© surena', 'موافق', `${usedPrefix}upvote`, 'مخالف', `${usedPrefix}devote`, m)
     ]
 }
-handler.help = ['mulaivote [alasan]']
+handler.help = ['startvote <text>']
 handler.tags = ['vote']
 handler.command = /^(start|mulai|\+)vote$/i
 handler.admin = true
