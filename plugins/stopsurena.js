@@ -5,7 +5,7 @@ let handler  = async (m, { conn }) => {
     conn.close()
   }
 }
-handler.help = ['berhenti','stop']
+handler.help = ['stop']
 handler.tags = ['surena']
 handler.command = /^(berhenti|stop)$/i
 handler.owner = true
