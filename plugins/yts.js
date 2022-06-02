@@ -6,6 +6,7 @@ let handler = async (m, { text }) => {
     switch (v.type) {
       case 'video': return `
 *${v.title}*
+
 Link: ${v.url}
 Duration: ${v.timestamp}
 Uploaded ${v.ago}
