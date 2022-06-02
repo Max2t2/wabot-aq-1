@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
         text,
         [],
         [],
-        await conn.send2Button(m.chat, 'Voting begins', '© surena', 'Upvote', `${usedPrefix}upvote`, 'Devote', `${usedPrefix}devote`, m)
+        await conn.send2Button(m.chat, text, '© surena', 'Upvote', `${usedPrefix}upvote`, 'Devote', `${usedPrefix}devote`, m)
     ]
 }
 handler.help = ['mulaivote [alasan]']
