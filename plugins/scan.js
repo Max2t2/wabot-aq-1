@@ -32,7 +32,7 @@ let handler = async (m, { conn, args }) => {
     } else throw '*کاربر یافت نشد*'
 }
     
-handler.help = ['scan'].map(v => v + ' [nomor]')
+handler.help = ['scan'].map(v => v + ' <number>')
 handler.tags = ['tools']
 handler.command = /^scan$/i
 
