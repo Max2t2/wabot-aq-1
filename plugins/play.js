@@ -44,7 +44,7 @@ if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(comm
   asDocument: chat.useDocument
 })
 }
-handler.help = ['play'].map(v => v + ' <query>')
+handler.help = ['play', 'play2'].map(v => v + ' <query>')
 handler.tags = ['downloader']
 handler.command = /^play2?$/i
 
