@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
       ])
   )).filter(v => v[1]).map(v => v[0] + '@c.us')
   let response = await conn.groupAdd(m.chat, users)
-  if (response[users] == 408) throw `The number has come out new² ini\nCan only enter through ${usedPrefix}link`
+  if (response[users] == 408) throw `Cannot add him! send invite link...`
   let pp = await conn.getProfilePicture(m.chat).catch(_ => false)
   let jpegThumbnail = pp ? await (await fetch(pp)).buffer() : false
   for (let user of response.participants.filter(user => Object.values(user)[0].code == 403)) {
@@ -32,7 +32,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
   }
 }
 handler.help = ['add', '+'].map(v => v + ' number,number')
-handler.tags = ['disabled']
+handler.tags = ['Disabled']
 handler.command = /^(add|\+)$/i
 handler.owner = false
 handler.mods = false
