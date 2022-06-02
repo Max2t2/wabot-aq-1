@@ -16,11 +16,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 Reason: ${reason}
 
-╭─「 Upvote 」
+╭─「 Upvote 👍 」
 │ _Total: ${upvote.length}_
 │ ${upvote.map(u => '@' + u.split('@')[0]).join('\n │ ')}
 ╰────
-╭─「 Devote 」
+╭─「 Devote 👎 」
 │ _Total: ${devote.length}_
 │ ${devote.map(u => '@' + u.split('@')[0]).join('\n │ ')}
 ╰────
