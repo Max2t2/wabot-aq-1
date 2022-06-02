@@ -6,7 +6,7 @@ let handler = async(m, { conn, text }) => {
     const laporan = `*「 REPORT 」*\nSender : wa.me/${m.sender.split`@`[0]}\nReasson : ${text}\n_____________________\n\nAsk :\n\n wa.me/${m.sender.split`@`[0]}?text=*با+سلام*+تیم+پشتیبانی+ما+از+شما+گزارشی+را+با+موضوع+_${encodeURIComponent(text)}_+دریافت+کرد.+*نتیجه+گزارش+:*+`
     for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid && v != '@s.whatsapp.net'))
     m.reply(laporan, jid)
-    m.reply(laporan, m.sender)
+    //m.reply(laporan, m.sender)
     m.reply('*بابت گزارش از شما ممنونیم* نتیجه گزارش به زودی از طریق واتساپ برای شما ارسال خواهد شد ✔️')
 }
 handler.help = ['bug', 'report'].map(v => v + ' <laporan>')
