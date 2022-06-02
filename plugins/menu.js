@@ -20,7 +20,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-   ${'```👇 Join Us 👇```'}
+   *${'```👇 Join Us 👇```'}*
   https://chat.whatsapp.com/DHHxj6cS4m2I97PYRlO0MA
   
 ╭─「 %me 」
