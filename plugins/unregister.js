@@ -7,7 +7,7 @@ let handler = async function (m, { args, usedPrefix }) {
   user.registered = false
   m.reply(`_Profile deleted successfully!_`)
 }
-handler.help = ['', 'ister'].map(v => 'unreg' + v + ' <SN|SERIAL NUMBER>')
+handler.help = ['', 'ister'].map(v => 'unreg' + v + ' <SN>')
 handler.tags = ['Account']
 
 handler.command = /^unreg(ister)?$/i
