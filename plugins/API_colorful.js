@@ -8,5 +8,5 @@ handler.tags = ['disabled']
 handler.owner = true
 
 handler.command = /^colorful$/i
-
+handler.disabled = true
 module.exports = handler
