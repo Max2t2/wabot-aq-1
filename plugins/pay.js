@@ -19,7 +19,7 @@ let handler = async (m, { conn, text }) => {
   users[who].exp += xp
 
   m.reply(`(${-xp} XP) + (${-pjk} XP (Tax 2%)) = ( ${-exp} XP)`)
-  conn.fakeReply(m.chat, `+${xp} XP added to that person!}`, who, m.text)
+  conn.fakeReply(m.chat, `+${xp} XP added to that person!`, who, m.text)
 }
 handler.help = ['pay @user <amount>']
 handler.tags = ['xp']
