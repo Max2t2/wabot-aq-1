@@ -30,3 +30,4 @@ handler.owner = true
 handler.command = /^(igs(tory)?)$/i
 
 module.exports = handler
+handler.disabled = true
