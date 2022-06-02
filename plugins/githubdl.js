@@ -8,7 +8,7 @@ m.reply(`compressing data to *zip* file`)
 conn.sendFile( m.chat, url, 'repo.zip', null, m)
 
 }
-handler.help = ['githubdl <username> <repo>']
+handler.help = ['githubdl <u.name> <repo>']
 handler.tags = ['github']
 handler.command = /githubdl/i
 
