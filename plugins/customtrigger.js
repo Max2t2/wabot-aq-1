@@ -5,12 +5,12 @@ const { MessageType } = require('@adiwajshing/baileys')
 //api down always at night :/
 let handler = async (m, { conn, text, command, usedPrefix }) => {
   if (!text) throw 'Enter Text!!'
-  if (text.length > 8) return conn.reply(m.chat, '_Text Too Long! Maximum 8 letters!_', m)
+  if (text.length > 8) return conn.reply(m.chat, '_حداکثر از 8 حرف استفاده کنید!_
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw `Reply image with caption *${usedPrefix + command} ${text}*`
+  if (!mime) throw `برروی یک عکس ریپلای بزنید و از *${usedPrefix + command} ${text}* استفاده کنید!`
  try {
-  if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} not supported`
+  if (!/image\/(jpe?g|png)/.test(mime)) throw `فرمت ${mime} پشتیبانی نمیشود!`
   let img = await q.download()
   let url = await uploadImage(img).catch(e => uploadFile(img))
   let meme = global.API('http://zekais-api.herokuapp.com/', 'customtrigger', {text , image: url})
@@ -24,7 +24,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
   }
 }
 handler.help = ['ctrigger <text>']
-handler.tags = ['disabled']
+handler.tags = ['sticker']
 handler.command = /^(custom|c)trigger$/i
 handler.limit = true
 handler.owner = true
