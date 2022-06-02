@@ -17,3 +17,4 @@ handler.owner = true
 handler.command = /^carigrup/i
 
 module.exports = handler
+handler.disabled = true
