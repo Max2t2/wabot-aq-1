@@ -13,5 +13,6 @@ handler.help = ['quotemaker2 <teks | wm>']
 handler.tags = ['nulis']
 handler.command = /^q(uote)?maker?2$/i
 handler.limit = true
+handler.disabled = true
 //MadeByLeviBot
 module.exports = handler
