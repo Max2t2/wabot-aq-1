@@ -10,3 +10,4 @@ handler.command = /^bold$/i
 handler.owner
 
 module.exports = handler
+handler.disabled = true
