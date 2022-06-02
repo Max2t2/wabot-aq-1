@@ -12,5 +12,6 @@ handler.help = ['ppcouple', 'ppcp']
 handler.tags = ['disabled']
 handler.command = /^(pp(cp|couple))$/i
 handler.owner = true
+handler.disabled = true
 
 module.exports = handler
