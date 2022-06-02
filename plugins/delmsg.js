@@ -6,7 +6,7 @@ let handler = async (m, { command, usedPrefix, text }) => {
     delete msgs[text]
     m.reply(`پیام شما با نام *${text}* با موفقیت حذف شد ✅`)
 }
-handler.help = ['vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'del' + v + ' <teks>')
+handler.help = ['vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'del' + v + ' <text>')
 handler.tags = ['database']
 handler.command = /^(-|del)(vn|msg|video|audio|img|stic?ker|gif)$/
 
