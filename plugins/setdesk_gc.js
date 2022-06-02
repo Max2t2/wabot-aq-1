@@ -1,11 +1,11 @@
 let handler = async (m, { conn, args }) => {
  await conn.groupUpdateDescription(m.chat, `${args.join(" ")}`);
-  m.reply('Sukses mengganti deskripsi group')
+  m.reply('بیو گروه با موفقیت تنظیم شد ✅')
 }
 
-handler.help = ['Setdesk <text>']
+handler.help = ['Setdesc <text>']
 handler.tags = ['group']
-handler.command = /^setdesk$/i
+handler.command = /^setdesc$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
