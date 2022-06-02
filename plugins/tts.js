@@ -1,5 +1,5 @@
 let gtts = require('node-gtts')
-let fs = require('en')
+let fs = require('fs')
 let path = require('path')
 
 const defaultLang = 'id'
