@@ -3,7 +3,7 @@ let handler = async (m, { conn, args }) => {
   m.reply('بیو گروه با موفقیت تنظیم شد ✅')
 }
 
-handler.help = ['Setdesc <text>']
+handler.help = ['setdesc <text>']
 handler.tags = ['group']
 handler.command = /^setdesc$/i
 handler.owner = false
