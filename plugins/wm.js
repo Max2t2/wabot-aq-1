@@ -6,14 +6,14 @@ let handler = async (m, { conn, text }) => {
     let [packname, ...author] = text.split('|')
     author = (author || []).join('|')
     let mime = m.quoted.mimetype || ''
-    if (!/webp/.test(mime)) throw 'Reply sticker!'
+    if (!/webp/.test(mime)) throw 'برروی استیکر مورد نظر ریپلای کنید و متن خود را بنویسید!'
     let img = await m.quoted.download()
     stiker = await sticker(img, false, packname || '', author || '')
   } finally {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else throw 'لطفا به درستی وارد کنید'
+    else throw 'برروی استیکر مورد نظر ریپلای کنید و متن خود را بنویسید!'
   }
 }
 handler.help = ['wm <packname>|<author>']
