@@ -10,3 +10,4 @@ handler.owner = true
 handler.command = /^army$/i
 
 module.exports = handler
+handler.disabled = true
