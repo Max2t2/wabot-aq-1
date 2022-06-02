@@ -4,7 +4,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   m.reply('*نام گروه با موفقیت تغییر کرد ✅*')
 }
 
-handler.help = ['Setname <text>']
+handler.help = ['setname <text>']
 handler.tags = ['group']
 handler.command = /^setname$/i
 handler.owner = false
