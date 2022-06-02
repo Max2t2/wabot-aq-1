@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
   if (text.length > 8) return conn.reply(m.chat, '_پیام طولانی شد. لطفا حداکثر از 8 حرف استفاده کنید!_', m)
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw `برروی یک تصویر ریپلای بزنید و *${usedPrefix + command} ${text}* را ارسال کنید`
+  if (!mime) throw `برروی یک تصویر ریپلای بزنید و کد زیر را ارسال کنید\n\n*${usedPrefix + command} ${text}*`
  try {
   if (!/image\/(jpe?g|png)/.test(mime)) throw `فرمت ${mime} پشتیبانی نمیشود`
   let img = await q.download()
