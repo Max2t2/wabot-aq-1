@@ -4,13 +4,13 @@ const { sticker } = require('../lib/sticker')
 const { MessageType } = require('@adiwajshing/baileys')
 //api down always at night :/
 let handler = async (m, { conn, text, command, usedPrefix }) => {
-  if (!text) throw 'Enter Text!!'
-  if (text.length > 8) return conn.reply(m.chat, '_حداکثر از 8 حرف استفاده کنید!_
+  if (!text) throw 'پیام را وارد کنید!'
+  if (text.length > 8) return conn.reply(m.chat, '_پیام طولانی شد. لطفا حداکثر از 8 حرف استفاده کنید!_', m)
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw `برروی یک عکس ریپلای بزنید و از *${usedPrefix + command} ${text}* استفاده کنید!`
+  if (!mime) throw `برروی یک تصویر ریپلای بزنید و *${usedPrefix + command} ${text}* را ارسال کنید`
  try {
-  if (!/image\/(jpe?g|png)/.test(mime)) throw `فرمت ${mime} پشتیبانی نمیشود!`
+  if (!/image\/(jpe?g|png)/.test(mime)) throw `فرمت ${mime} پشتیبانی نمیشود`
   let img = await q.download()
   let url = await uploadImage(img).catch(e => uploadFile(img))
   let meme = global.API('http://zekais-api.herokuapp.com/', 'customtrigger', {text , image: url})
@@ -24,9 +24,8 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
   }
 }
 handler.help = ['ctrigger <text>']
-handler.tags = ['group']
+handler.tags = ['sticker']
 handler.command = /^(custom|c)trigger$/i
 handler.limit = true
-handler.owner = true
 //MADEbyAnshul
 module.exports = handler
