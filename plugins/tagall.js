@@ -5,7 +5,7 @@ let handler = async (m, { conn, text, participants }) => {
   })
 }
 handler.help = ['group'].map(v => v + ' <text>')
-handler.tags = ['change']
+handler.tags = ['Admin']
 handler.command = ['tagall']
 
 handler.admin = true
