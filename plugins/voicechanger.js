@@ -30,14 +30,14 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 conn.sendFile(m.chat, buff, ran, null, m, /vn/.test(args[0]), { quoted: m, mimetype: 'audio/mp4' })
                 await fs.unlinkSync(filename)
             })
-        } else throw `Reply to vn/audio and show me witch filter you want to apply on your voice\n\n *${usedPrefix + command}* blown|deep|earrape|fas?t|nightcore|reverse|robot|slow|smooth|tupai|squirrel|chipmunk`
+        } else throw `برروی یک پیام صوتی ریپلای بزنید و بعد از نوشتن کد دستوری بنویسید که میخواهید چه فیلتری برروی صدا اعمال شود؟\n\n *${usedPrefix + command}* blown|deep|earrape|fast|nightcore|reverse|robot|slow|smooth|tupai|squirrel|chipmunk`
     } catch (e) {
         throw e
     }
 }
-handler.help = ['bass', 'blown', 'deep', 'earrape', 'fast', 'fat', 'nightcore', 'reverse', 'robot', 'slow', 'smooth', 'tupai'].map(v => v + ' [vn]')
+handler.help = ['bass', 'blown', 'deep', 'earrape', 'fast', 'fat', 'nightcore', 'reverse', 'robot', 'slow', 'smooth', 'tupai'].map(v => v + ' (vn)')
 handler.tags = ['audio']
-handler.command = /^(bass|blown|deep|earrape|fas?t|nightcore|reverse|robot|slow|smooth|tupai|squirrel|chipmunk)$/i
+handler.command = /^(bass|blown|deep|earrape|fas؟t|nightcore|reverse|robot|slow|smooth|tupai|squirrel|chipmunk)$/i
 
 module.exports = handler
 
