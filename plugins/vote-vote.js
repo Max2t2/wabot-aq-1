@@ -18,7 +18,7 @@ Reason: ${reason}
 
 ╭─「 Upvote 👍 」
 │ _Total: ${upvote.length}_
-│ ${upvote.map(u => '@' + u.split('@')[0]).join('\n │ ')}
+│ ${upvote.map(u => '@' + u.split('@')[0]).join('\n│ ')}
 ╰────
 ╭─「 Devote 👎 」
 │ _Total: ${devote.length}_
