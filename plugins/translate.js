@@ -1,12 +1,12 @@
 const translate = require('translate-google-api')
-const defaultLang = 'en'
+const defaultLang = 'fa'
 const tld = 'cn'
 
 let handler = async (m, { args, usedPrefix, command }) => {
     let err = `
 For example:
-${usedPrefix + command} <lang> [text]
-${usedPrefix + command} id your messages
+${usedPrefix + command} <lang> <text>
+${usedPrefix + command} your messages id
 
 لیست زبان هایی که پشتیبانی می شوند: https://cloud.google.com/translate/docs/languages
 `.trim()
@@ -36,7 +36,7 @@ ${usedPrefix + command} id your messages
     }
 
 }
-handler.help = ['translate'].map(v => v + ' <lang> <teks>')
+handler.help = ['translate'].map(v => v + ' <lang> <text>')
 handler.tags = ['tools']
 handler.command = /^(tr(anslate)?)$/i
 handler.limit = false
