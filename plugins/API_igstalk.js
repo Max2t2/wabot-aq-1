@@ -40,3 +40,4 @@ handler.owner = true
 handler.command = /^(igstalk)$/i
 
 module.exports = handler
+handler.disabled = true
