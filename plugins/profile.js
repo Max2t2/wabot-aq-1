@@ -27,13 +27,13 @@ ______________
 *Role:* ${role}
 *Limit:* ${limit}
 *Registered:* ${registered ? 'Yes': 'No'}
-*Premium:* ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\n______________\nEXP claimed today ✅' : ''}
+*Premium:* ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\n______________\nEXP claimed today ✅' : '\n______________\nEXP not claimed today ❌'}
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
   }
 }
-handler.help = ['profile [@user]']
+handler.help = ['profile @user']
 handler.tags = ['tools']
 handler.command = /^profile$/i
 module.exports = handler
