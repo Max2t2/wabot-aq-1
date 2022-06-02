@@ -27,6 +27,7 @@ handler.help = ['math <mode>']
 handler.tags = ['disabled']
 handler.command = /^math/i
 handler.owner = true
+handler.disabled = true
 
 module.exports = handler
 
