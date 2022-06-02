@@ -5,7 +5,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn }) => {
   if (!global.support.convert &&
       !global.support.magick &&
-      !global.support.gm) return handler.disabled = false
+      !global.support.gm) return handler.disabled = true
   if (!m.quoted) return conn.reply(m.chat, 'برروی یک استیکر ریپلای کنید!', m)
   let q = { message: { [m.quoted.mtype]: m.quoted } }
   if (/sticker/.test(m.quoted.mtype)) {
