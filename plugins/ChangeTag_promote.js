@@ -3,10 +3,10 @@ let handler = async (m, { conn, participants }) => {
   let users = m.mentionedJid.filter(user => members.includes(user))
   for (let user of users) await conn.groupMakeAdmin(m.chat, [user]).catch(console.log)
 }
-handler.help = ['promote','admin','^', '↑'].map(v => v + ' @user')
-handler.tags = ['admin']
+handler.help = ['promote'].map(v => v + ' @user')
+handler.tags = ['Admin']
 
-handler.command = /^(promote|admin|\^|↑)$/i
+handler.command = /^(promote|\^|↑)$/i
 
 handler.group = true
 
