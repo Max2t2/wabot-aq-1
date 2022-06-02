@@ -14,7 +14,7 @@ let handler = async (m, { conn }) => {
     m.reply(`امروز در این چت *${totalM}* پیام ارسال شد!\n\n${pesan}`, false, { contextInfo: { mentionedJid: sorted.map(v => v[0]) } })
 }
 handler.help = ['total']
-handler.tags = ['group']
+handler.tags = ['Admin']
 handler.admin = true
 
 handler.command = /^total$/i
