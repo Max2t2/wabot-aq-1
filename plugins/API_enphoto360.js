@@ -16,4 +16,5 @@ handler.command = /^(en?photo(360)?)$/i
 handler.owner = true
 
 module.exports = handler
+handler.disabled = true
 
