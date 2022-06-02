@@ -42,6 +42,8 @@ const defaultMenu = {
 *%npmname@^%version*
 ${'```%npmdesc```'}
 `,
+  
+TEST
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
