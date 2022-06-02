@@ -3,11 +3,11 @@
 ## FOR TERMUX/UBUNTU/SSH USER
 
 ```bash
-pkg update && apt upgrade
-pkg install git -y
-pkg install nodejs -y
-pkg install ffmpeg -y
-pkg install imagemagick -y
+apt update && apt upgrade
+apt install git -y
+apt install nodejs -y
+apt install ffmpeg -y
+apt install imagemagick -y
 git clone https://github.com/hyno831/wabot-aq
 cd wabot-aq
 npm install
