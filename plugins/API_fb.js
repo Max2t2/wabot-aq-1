@@ -41,6 +41,7 @@ Keyword: ${keywords || none}
 handler.help = ['fb'].map(v => v + ' <url>')
 handler.tags = ['disabled']
 handler.owner = true
+handler.disabled = true
 
 handler.command = /^f((b|acebook)(dl|download)?(er)?)$/i
 
