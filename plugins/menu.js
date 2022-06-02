@@ -39,11 +39,10 @@ const defaultMenu = {
   body: '│ • %cmd %islimit %isPremium',
   footer: '╰────\n',
   after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
+*© surena* | %version*
+${'```Join Us```'}
+https://chat.whatsapp.com/DHHxj6cS4m2I97PYRlO0MA
 `,
-  
-TEST
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
