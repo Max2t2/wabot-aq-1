@@ -23,4 +23,5 @@ handler.before = async function (m) {
   return !0
 }
 
+handler.disabled = true
 module.exports = handler
