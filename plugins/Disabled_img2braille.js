@@ -14,7 +14,7 @@ async function handler(m) {
     }))
     await fs.unlink(filename)
 }
-handler.command = handler.help = ['disabled']
+handler.command = handler.help = ['test']
 handler.tags = ['tools']
 handler.owner = true
 
