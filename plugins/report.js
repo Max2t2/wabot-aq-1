@@ -9,7 +9,7 @@ let handler = async(m, { conn, text }) => {
     //m.reply(laporan, m.sender)
     m.reply('*بابت گزارش از شما ممنونیم* نتیجه گزارش به زودی از طریق واتساپ برای شما ارسال خواهد شد ✔️')
 }
-handler.help = ['bug', 'report'].map(v => v + ' <laporan>')
+handler.help = ['bug', 'report'].map(v => v + ' <report>')
 handler.tags = ['info']
 handler.command = /^(bug|report)$/i
 
