@@ -7,6 +7,7 @@ let handler = async (m, { conn }) => {
 handler.help = ['Cekwarn @user']
 handler.tags = ['group']
 handler.command = /^cekwarn$/i
+handler.disabled = true
 
 handler.group = true
 
