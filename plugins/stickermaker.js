@@ -33,7 +33,7 @@ try {
   }
 }
 
-handler.help = ['stickermaker (caption|reply media)']
+handler.help = ['stickermaker (reply media)']
 handler.tags = ['sticker']
 handler.command = /^(stickermaker)$/i
 handler.limit = true
