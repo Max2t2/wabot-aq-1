@@ -17,5 +17,6 @@ handler.tags = ['vote']
 handler.command = /^(start|mulai|\+)vote$/i
 handler.admin = true
 handler.botadmin = true
+handler.group = true
 
 module.exports = handler
