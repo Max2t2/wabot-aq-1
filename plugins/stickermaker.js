@@ -10,13 +10,13 @@ let handler = async (m, { conn, usedPrefix, text }) => {
 *Usage:* ${usedPrefix}stickmaker <effectname>
 *Example:* ${usedPrefix}stickmaker jail
 
-*List Effect:*
+*Effects list:*
 ${effects.map(effect => `_> ${effect}_`).join('\n')}
 `.trim()
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw 'No Image Found'
-  if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} not support`
+  if (!mime) throw 'برروی یک عکس ریپلای بزنید!'
+  if (!/image\/(jpe?g|png)/.test(mime)) throw `فرمت ${mime} پشتیبانی نمیشود`
   let img = await q.download()
   let url = await uploadImage(img)
   let apiUrl = global.API('https://some-random-api.ml/canvas/', encodeURIComponent(effect), {
@@ -28,14 +28,14 @@ try {
       quoted: m
     })
   } catch (e) {
-    m.reply('Conversion to Sticker Failed, Sending as Image Instead')
+    m.reply('عملیات موفقیت آمیز نبود...')
     await conn.sendFile(m.chat, apiUrl, 'image.png', null, m)
   }
 }
 
-handler.help = ['stickmaker (caption|reply media)']
+handler.help = ['stickermaker (caption|reply media)']
 handler.tags = ['sticker']
-handler.command = /^(stickmaker)$/i
+handler.command = /^(stickermaker)$/i
 handler.limit = true
 handler.group = false
 handler.register = true
