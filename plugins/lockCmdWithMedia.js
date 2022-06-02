@@ -9,6 +9,6 @@ module.exports = Object.assign(async function handler(m, { command }) {
 }, {
     rowner: true,
     help: ['un', ''].map(v => v + 'lockcmd'),
-    tags: ['disabled'],
+    tags: ['database'],
     command: /^(un)?lockcmd$/i
 })
