@@ -7,5 +7,6 @@ handler.help = ['retro'].map((v) => v + " <text>")
 handler.tags = ['videomaker']
 
 handler.command = /^retro$/i
+handler.disabled = true
 
 module.exports = handler
