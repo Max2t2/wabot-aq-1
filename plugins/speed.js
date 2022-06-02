@@ -42,7 +42,7 @@ let handler = async (m, { conn }) => {
   let neww = performance.now()
   let speed = neww - old
   m.reply(`
-Merespon dalam ${speed} millidetik
+*Respond in ${speed} ms* ⚡️
 
 💬 Status :
 - *${groups.length}* Group Chats
@@ -71,7 +71,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 `.trim())
 }
 handler.help = ['ping', 'speed']
-handler.tags = ['info', 'tools']
+handler.tags = ['info']
 
 handler.command = /^(ping|speed|info)$/i
 module.exports = handler
