@@ -10,4 +10,6 @@ handler.admin = true
 handler.group = true
 
 module.exports = handler
+
+const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
