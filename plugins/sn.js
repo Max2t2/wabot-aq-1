@@ -9,8 +9,8 @@ SN: ${sn}
 `.trim())
 }
 
-handler.help = ['ceksn']
-handler.tags = ['exp']
+handler.help = ['sn']
+handler.tags = ['info']
 handler.command = /^(sn)$/i
 handler.register = true
 module.exports = handler
