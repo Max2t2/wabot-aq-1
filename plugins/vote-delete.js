@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, isAdmin, isOwner }) => {
     delete conn.vote[id]
     m.reply(`انجام شد ✅`)
 }
-handler.help = ['hapusvote']
+handler.help = ['deletevote']
 handler.tags = ['vote']
 handler.command = /^(delete|hapus|-)vote$/i
 handler.admin = true 
