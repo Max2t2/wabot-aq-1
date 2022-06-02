@@ -15,7 +15,7 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 
 اگر قابلیت Getmsg فعال باشد دیگر نیازی به استفاده از *get${which}${usedPrefix}* ندارید!`, '© surena', 'فعالسازی', '.1 getmsg', m)
 }
-handler.help = ['vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'add' + v + ' <teks>')
+handler.help = ['vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'add' + v + ' <text>')
 handler.tags = ['database']
 handler.command = /^(\+|add)(vn|msg|video|audio|img|stic?ker|gif)$/
 
