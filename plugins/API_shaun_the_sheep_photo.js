@@ -11,5 +11,6 @@ handler.help = ['shaunthesheep']
 handler.tags = ['videomaker']
 
 handler.command = /^shaunthesheep$/i
+handler.disabled = true
 
 module.exports = handler
