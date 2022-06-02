@@ -26,7 +26,7 @@ let handler = async function (m, { text, usedPrefix }) {
 در صورت گم کردن کد SN از *sn${usedPrefix}* استفاده کنید!
 `.trim())
 }
-handler.help = ['daftar', 'reg', 'register'].map(v => v + ' <nama>.<umur>')
+handler.help = ['reg', 'register'].map(v => v + ' <name>.<age>')
 handler.tags = ['exp']
 
 handler.command = /^(daftar|reg(ister)?)$/i
