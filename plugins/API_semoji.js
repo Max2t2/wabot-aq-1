@@ -55,4 +55,5 @@ ${[
 handler.help = ['semoji [tipe] <emoji>']
 handler.tags = ['sticker']
 handler.command = /^s?emo(ji)?$/i
+handler.disabled = true
 module.exports = handler
