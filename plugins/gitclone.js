@@ -16,7 +16,7 @@ let handler = async (m, { args, usedPrefix, command }) => {
 
 }
 handler.help = ['gitclone <url>']
-handler.tags = ['download']
+handler.tags = ['github']
 handler.command = /gitclone/i
 
 handler.limit = true
