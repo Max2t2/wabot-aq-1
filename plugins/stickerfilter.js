@@ -33,7 +33,7 @@ ${effects.map(effect => `_> ${effect}_`).join('\n')}
   }
 }
 
-handler.help = ['stickerfilter (caption|reply media)']
+handler.help = ['stickerfilter (reply media)']
 handler.tags = ['sticker']
 handler.command = /^(stickerfilter)$/i
 handler.limit = true
